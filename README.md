@@ -85,7 +85,7 @@ https://kirrinfinch.com/
 
 ## Archivos
 ### Sprint 1
-### README.md : es el presente archvio.
+### README.md : es el presente archivo.
 ### wireframes : directorio con wireframes del sitio. Version 0.
 ### desing : directorio con el logo, colores y tipografias. 
 
