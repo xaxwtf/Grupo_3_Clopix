@@ -40,11 +40,11 @@ Clopix pretende crear prendas con el objetivo de reproducir entre diferentes gen
 
 Referencias Principales
 
-# PALM TREAT: Es una tienda de ropa alternativa, visualmente llamativa, estilo vaporwave y retro. La página tiene un estilo práctico y minimalista, pero sin dejar de ser funcional.
+#### PALM TREAT: Es una tienda de ropa alternativa, visualmente llamativa, estilo vaporwave y retro. La página tiene un estilo práctico y minimalista, pero sin dejar de ser funcional.
 https://palmtreat.design/
 
 
-# VAPOR95: Representa la tienda que más se adapta a Clopix. No simplemente por su estética, sino también por su contenido y su interfaz.
+##### VAPOR95: Representa la tienda que más se adapta a Clopix. No simplemente por su estética, sino también por su contenido y su interfaz.
 https://vapor95.com/
 
 ### Por los productos o servicios que ofrecen.
