@@ -33,7 +33,7 @@ Clopix pretende crear prendas con el objetivo de reproducir entre diferentes gen
      Fan de los idiomas, el diseño de indumentaria, y bailar.
      
 ###  Segio L: 
-     24 años. Estudiantes de Tecnicatura en Programación. Apasionado de los documentales y el animé. 
+     24 años. Estudiantes de Tecnicatura en Programación. Apasionado de los documentales, la ciencia y el animé. 
 
 --------------------------------------------------------------------------------------------------------------------------
 ## Referencias
