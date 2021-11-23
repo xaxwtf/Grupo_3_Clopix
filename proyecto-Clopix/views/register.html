@@ -1,26 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href = "https: //fonts.googleapis.com/css2? family = Roboto: wght @ 300 & display = swap "rel =" stylesheet ">
 
+    <link rel="stylesheet" href="/css/register.css">
 
-<form action="action_page">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+rel="stylesheet" />
+
+</head>
+
+<body>
+  <div class="logo">
+    <img src="" alt="logo de Clopix">
+     </div>
+      <div class="contenido">
+          <nav>
+              <ul>
+                  <li><a href="#">TIENDA</a></li>
+                  <li><a href="#">CATÁLOGOS</a></li> 
+                  <li><a href="#">NOSOTR@S</a></li>
+              </ul>
+          </nav>
+
+      </div>
+
+      <!--class container-->
+
     <div class="container">
       <h1>Registro</h1>
-      <p>Por favor llene este formulario para crear una cuenta.</p>
+
+      </div>
+
+
+      <!--class registro-cupon-->
+
+      <div class="regristro-cupon">
+      <p>¡Regístrate y gana un cupón de descuento!</p>
       <hr>
+      
+      </div>
+
+      <!--class form-register-->
+      
+      <form action="/registro" method="POST" class="form-register">
+
+        <!--class datos-personales-->
+
+        <div class="datos-personales">
+
+        <h3>Datos personales</h3>
+        
+      </div>
+    
+        <input type="text" name="nombre" id="nombre" placeholder="NOMBRE" class="controls" required><br>
+         
+        <input type="text" name="nombre" id="nombre" placeholder="APELLIDO" class="controls" required><br>
+ 
+ 
+        <input type="text" name="email" id="email" placeholder="E-MAIL" class="controls" required><br>
+
+        <input type="tel" name="telefono" placeholder="CELULAR">
+
+        <!--class datos-ingreso-->
+
+        <div class="datos-ingreso">
+
+        <h3>Datos de ingreso</h3>
+
+      </div>
+
+        <input type="text" name="usuario" id="usuario" placeholder="NOMBRE USUARIO" class="controls" required><br>
+
+        <input class="psw" type="password" name="pass" placeholder="ELIJA UNA CONTRASEÑA">
+     
+            <input class="psw" type="password" name="pass" placeholder="CONFIRMAR CONTRASEÑA">
+
+
+
+            <input class="button" type="submit" value="Completar registro">
+
+
+
+
+        </form>
   
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" id="email" required>
-  
-      <label for="psw"><b>Contraseña</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-  
-      <label for="psw-repeat"><b>Repita la contraseña</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-      <hr>
-  
-      <p>Al crear una cuenta, acepta nuestros<a href="#">Términos y privacidad</a>.</p>
-      <button type="submit" class="registerbtn">Register</button>
+ 
     </div>
   
     <div class="container-signin">
       <p>¿Ya tienes una cuenta?<a href="#">Sign in</a>.</p>
     </div>
   </form>
+
+  </body>
+  </html>
+  
