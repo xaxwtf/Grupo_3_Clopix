@@ -11,6 +11,7 @@
 
 ###**__CONTINUAR HACIENDO__**
 - mejorar el carrito
+- Mejorar el home
 
 ##**__HACER MENOS__**
 -
