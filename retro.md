@@ -8,7 +8,7 @@ dejar de hacer: procrastinar
 
 
 
-##HACER MÁS
+**__HACER MÁS__**
 
 
 ##CONTINUAR HACIENDO
