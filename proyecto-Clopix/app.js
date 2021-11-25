@@ -18,3 +18,4 @@ app.get('/login', (req,res)=>{
 app.get('/registro', (req,res)=>{
     res.sendFile(__dirname + '/views/register.html');
 });
+

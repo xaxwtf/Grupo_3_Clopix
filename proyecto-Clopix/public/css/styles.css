@@ -4,27 +4,24 @@
     box-sizing: border-box;
 }
 
+@media (min-width: 361px) {
+  
+}
+
+@media (min-width:7668px) {
+  
+}
+
 .logo img {
    width: 100px;
 }
 
 .cabecera {
-
-}
-
-
-.conteiner {
-
-}
-
-.regristro-cupon {
-    
-}
-
-.form-register {
-
-}
-
-.datos-personales {
-
+    display: flex;
+    /* flex-wrap: wrap; */
+    position: absolute;
+    right: 0;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 52px;
 }
