@@ -96,3 +96,6 @@ https://kirrinfinch.com/
 ### Tablero: https://trello.com/b/DD83Yi9y/grupo-3-digital
 
 --------------------------------------------------------------------------------------------------------------------------
+PALETA DE COLORES
+
+https://www.colorhunt.co/palette/000d6b9c19e0ff5da299ddcc
