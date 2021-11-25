@@ -1,21 +1,16 @@
-##Retrospectiva
-Comenzar a hacer:   tener iniciativa
-hacer más: reuniones
-continuar haciendo: reuniones
-hacer menos:
-dejar de hacer: procrastinar
-##COMENZAR A HACER
 
+**__COMENZAR A HACER__**
+-
 
 
 **__HACER MÁS__**
+-
 
+**__CONTINUAR HACIENDO__*
+-
 
-##CONTINUAR HACIENDO
+**__HACER MENOS__**
 
-
-##HACER MENOS
-
-
-##DEJAR DE HACER
-**
+-
+**__DEJAR DE HACER__**
+-
