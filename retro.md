@@ -1,7 +1,8 @@
 #**__COMENZAR A HACER__**
 - el detalle de producto
-- el pie ce pagina
-- usar eltrello para organizarnos  mejor
+- el pie de pagina
+- usar el trello para organizarnos  mejor
+- empezar los daylist
 
 
 ###**__HACER MÁS__**
@@ -11,9 +12,8 @@
 
 ###**__CONTINUAR HACIENDO__**
 - mejorar el carrito
-- Mejorar el home
 
 ##**__HACER MENOS__**
--
+- 
 ###**__DEJAR DE HACER__**
--perder el tiempo
+- perder el tiempo
