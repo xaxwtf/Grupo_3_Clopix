@@ -1,16 +1,16 @@
 
-**__COMENZAR A HACER__**
+###**__COMENZAR A HACER__**
 -
 
 
-**__HACER MÁS__**
+###**__HACER MÁS__**
 -
 
-**__CONTINUAR HACIENDO__**
+###**__CONTINUAR HACIENDO__**
 -
 
-**__HACER MENOS__**
+###**__HACER MENOS__**
 
 -
-**__DEJAR DE HACER__**
+###**__DEJAR DE HACER__**
 -
