@@ -11,7 +11,8 @@
 - pedir ayuda para solucionar problemas
 
 ###**__CONTINUAR HACIENDO__**
-- mejorar el carrito
+- mejorar el Homey el carrito
+- aplicarle las ofertas al carrusel
 
 ##**__HACER MENOS__**
 - 
