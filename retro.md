@@ -6,7 +6,7 @@
 **__HACER MÁS__**
 -
 
-**__CONTINUAR HACIENDO__*
+**__CONTINUAR HACIENDO__**
 -
 
 **__HACER MENOS__**
