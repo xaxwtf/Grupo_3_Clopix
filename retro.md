@@ -1,6 +1,20 @@
-##Retrospectiva
-Comenzar a hacer:   tener iniciativa
-hacer más: reuniones
-continuar haciendo: reuniones
-hacer menos:
-dejar de hacer: procrastinar
+#**__COMENZAR A HACER__**
+- el detalle de producto
+- el pie de pagina
+- usar el trello para organizarnos  mejor
+- empezar los daylist
+
+
+###**__HACER MÁS__**
+- mas estilos
+- ayudararnos a entender mejor los temas y solucionar problemas en el proyecto
+- pedir ayuda para solucionar problemas
+
+###**__CONTINUAR HACIENDO__**
+- mejorar el Homey el carrito
+- aplicarle las ofertas al carrusel
+
+##**__HACER MENOS__**
+- 
+###**__DEJAR DE HACER__**
+- perder el tiempo

@@ -3,7 +3,7 @@ const app = express();
 app.use(express.static('public'));
 
 
-app.listen (process.env.PORT ||3001, ()=>{
+app.listen (process.env.PORT ||3002, ()=>{
     console.log('Servidor funcionando bien');
 });
 
@@ -18,7 +18,6 @@ app.get('/login', (req,res)=>{
 app.get('/register', (req,res)=>{
     res.sendFile(__dirname + '/views/register.html');
 });
-
 app.get('/productCart', (req,res)=>{
     res.sendFile(__dirname + '/views/productCart.html');
 });
