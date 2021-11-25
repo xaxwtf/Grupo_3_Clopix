@@ -1,15 +1,14 @@
-#**__COMENZAR A HACER__**
+**__COMENZAR A HACER__**
+-```AASDASD´´
+
+**__HACER MÁS__**
+
+
+**__CONTINUAR HACIENDO__**
 -
 
-
-###**__HACER MÁS__**
+**__HACER MENOS__**
 -
 
-###**__CONTINUAR HACIENDO__**
--
-
-###**__HACER MENOS__**
-
--
-###**__DEJAR DE HACER__**
+**__DEJAR DE HACER__**
 -
