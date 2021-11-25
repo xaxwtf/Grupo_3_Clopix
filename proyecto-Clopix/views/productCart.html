@@ -2,65 +2,75 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link href="/public/css/stylesCarrito.css" rel="stylesheed" >
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/CarritoStyle.css">
+
     </head>
     <body>
-        <table>
-            <tr>
-                <th>Producto</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
+        <table id="ListaCompras">
+            <tr >
+                <th id="Producto">Producto</th>
+                <th id="Precio Unitario">Precio Unitario</th>
+                <th id="Cantidad">Cantidad</th>
+                <th id="Precio Total">Precio Total</th>
             </tr>
-            <tr>
-                <td>
-                    <img src="/public/img/producto.png" alt="Imagen de Producto" width="400" id="ImagenProducto"> 
-                    <br>
-                    <label id="DetalleProducto">detalle producto</label>
+            <tr class="producto">
+                <td class="detalleProducto">
+                    <img src='/images/productoEjemplo1.png' alt="Imagen de Producto" class="img"> 
                 </td>
-                <td> 
+
+                <td class="precioProducto"> 
                     <label>1000$</label>
                 </td>
-                <td>
+
+                <td class="cantidadProducto">
                     <button type="button">+</button>
                     <label for="">1</label>
                     <button type="button">-</button>
                 </td>
-                <td>
+
+                <td class="totalProducto"> 
+                    <label>1000$</label>
+                </td>
+
+                <td class="quitarProducto">
                     <button type="delete">X</button>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <img src="/public/img/producto2.png" alt="Imagen de producto2" width="400" id="ImagenProducto"> 
-                    <br>
-                    <label id="DetalleProducto">detalle producto</label>
+            <tr class="producto">
+                <td class="detalleProducto">
+                    <img src="/images/productoEjemplo2.png" alt="Imagen de producto2" id="ImagenProducto"> 
                 </td>
-                <td>
-                    <label style="color: blue;">50$</label>
+                <td class="precioProducto">
+                    <label>50$</label>
                 </td>
-                <td>
+                <td class="cantidadProducto">
                     <button type="button">+</button>
                     <label for="">1</label>
                     <button type="button">-</button>
                 </td>
-                <td>
-                    <button type="delete">X</button>
+                <td class="totalProducto"> 
+                    <label>1000$</label>
                 </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                    <label for=""> Total: 1050$</label>
+                <td class="quitarProducto">
+                    <button type="delete" >X</button>
                 </td>
             </tr>
 
 
         </table>
         <section> 
-            <button type="submit">Realizar Pedido</button>
+            <Label>Total 1050$</Label>
         </section>
+        <section> 
+            <button type="submit">Realizar Pedido</button>
+            <button type="submit">Seguir Comprando</button>
+        </section>
+        <footer>
+            
+        </footer>
 
     </body>
 </html>

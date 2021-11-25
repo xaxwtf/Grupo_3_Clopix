@@ -19,3 +19,4 @@ app.get('/registro', (req,res)=>{
     res.sendFile(__dirname + '/views/register.html');
 });
 
+

@@ -1,0 +1,69 @@
+
+td img{
+    width: 100%;
+    height: 220px;
+}
+td button{
+    width: 100%;
+    
+}
+.suprimir{
+    
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+td{
+    border: 1px solid black;
+}
+a img{
+    width: 30px;
+
+}
+table{
+    width: 100%;
+}
+.contenedorSuprimir{
+    display: flex;
+    width: 100%;
+    border-bottom:0px solid blue;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+}
+td.btnmasmenos{
+ height: 25%;
+ width: 100%;
+}
+#Producto{
+width: 40%;
+}
+#PrecioUnitario{
+width: 20%;
+}
+#Cantidad{
+width: 10%;
+}
+#PrecioTotal{
+    width: 20%;
+}
+#ListaCompras{
+    border: 1px solid red;
+}
+.producto{
+    border:1px solid blue;
+    height: 130px;
+}
+.producto td button{
+    width: 50px;
+    height: 50px;
+    align-items: center;
+}
+.detalleProducto{
+    width: 100%;
+    height: 220px;
+}
+.precioProducto{
+    width: 100%;
+    height: 100%;
+}
