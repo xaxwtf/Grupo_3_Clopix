@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html >
+<%- include('../partials/head')  %> 
+<body >
+    <%- include('../partials/header')%>
+    <section class="AltaProducto">
+        <label for="">Nombre del Producto</label>
+        <label for="">Descripcion</label>
+        <input type="text" >;
+        <label for="">Precio Unitario</label>
+        <input type="text">
+        <section class="talles">
+            <label for="">Talles</label>
+            <ul>
+                <li> <label><input type="checkbox" id="talleS" value="primero"> S</label> </li>
+                <li> <label><input type="checkbox" id="talleL" value="segundo"> L</label><br></li>
+                <li> <label><input type="checkbox" id="talleX" value="tercerox"> M</label><br></li>
+                <li> <label><input type="checkbox" id="talleXL" value="cuarto"> XL</label><br></li>
+                <li> <label><input type="checkbox" id="talleXXL" value="quinto"> XXL</label><br></li>
+                <li> <label><input type="checkbox" id="talleXXXL" value="quinto"> XXXL</label><br></li>
+            </ul>
+        </section>
+        <label for="">Selecionar Imagen</label>
+        <input type="file" name="ImagenProducto">
+    </section>
+    <%- include('../partials/footer')%>
+</body>
+</html>

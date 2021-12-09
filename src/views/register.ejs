@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width">
+
+        <link rel="stylesheet" href="/css/register.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet">
+
+    </head>
+    <body>
+      <%- include('./partials/header')%>
+    
+        <div class="wrapper">
+            <div class="title">
+              Formulario de Registro 
+            </div>
+            
+            <div class="form">
+               <div class="inputfield">
+                  <label>Nombre completo</label>
+                  <input type="text" class="input">
+               </div>  
+              
+             <div class="inputfield">
+              <label>E-mail</label>
+              <input type="text" class="input">
+           </div>  
+           <div class="inputfield">
+            <label>Celular</label>
+            <input type="text" class="input">
+         </div>  
+        
+         <!--Datos de ingreso-->
+        
+        
+        
+                <div class="inputfield">
+                  <label>Nombre de usuario</label>
+                  <input type="text" class="input">
+               </div>  
+               <div class="inputfield">
+                  <label>Contraseña</label>
+                  <input type="password" class="input">
+               </div>  
+              <div class="inputfield">
+                  <label>Confirmar contraseña</label>
+                  <input type="password" class="input">
+               </div> 
+        
+             
+            
+        
+            
+             
+              <div class="inputfield terms">
+                  <label class="check">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <p>Acepto términos y condiciones</p>
+               </div> 
+              <div class="inputfield">
+                
+                <a href="">
+                  <input type="submit" value="Crear cuenta" class="btn"  >
+                </a>
+                
+              </div>
+              
+            <!--class container-signin-->
+          
+            <div class="container-signin">
+              <p>¿Ya tienes una cuenta?<a href="#">Iniciar sesión</a>.</p>
+            </div>
+              
+            </div>
+        </div>	
+        <%- include('./partials/footer')%>
+
+    </body>
+</html>
+  
