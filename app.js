@@ -20,7 +20,7 @@ app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 
-app.use('/',rutaPrincipal);
+//app.use('/',rutaPrincipal);
 app.use('/Producto',rutaP);
 app.use('/User',rutaUser);
 
