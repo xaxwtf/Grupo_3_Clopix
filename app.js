@@ -1,4 +1,5 @@
 const express = require('express');
+const req = require('express/lib/request');
 const app = express();
 const methodOverride= require("method-override");
 ///cargando rutas
@@ -20,7 +21,9 @@ app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 
-//app.use('/',rutaPrincipal);
+app.use('/',(req,res)=>{
+    res.render('index');
+});
 app.use('/Producto',rutaP);
 app.use('/User',rutaUser);
 
