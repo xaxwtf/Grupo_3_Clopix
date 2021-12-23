@@ -1,5 +1,4 @@
 const express = require('express');
-const { login } = require('./src/controllers/userCtrl');
 const app = express();
 const methodOverride= require("method-override");
 ///cargando rutas
