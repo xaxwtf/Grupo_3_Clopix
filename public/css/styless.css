@@ -1,0 +1,190 @@
+
+/* Editar producto */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    width: 100%;
+    background-image: url("https://cdn.shopify.com/s/files/1/1171/8456/files/71530421_729406894232388_5302369846022799223_n_1024x1024.jpg?v=1636497317");
+    background-size: cover;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+header{
+    background-color: white;
+    border: 5px solid #f0cddc;
+}
+
+header nav ul li a{
+    width: 15%;
+    color: #99DDCC;
+    font-size: 30px;
+    margin: 10px;
+}
+
+header nav ul li{
+    display: flex;
+    width: 25%;
+    align-items: center;
+    justify-content:space-between;
+}
+
+header nav ul{
+    display: flex;
+    flex-direction: row;
+}
+
+.fas-fa {
+    display: flex;
+    flex-wrap: wrap; 
+    position: absolute;
+    right: 15px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.fas-fa .fas-fa-home{
+    color: white;
+    background-color: black;
+}
+section.op{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+/* FIN DEL HEADER*/
+
+footer a img{
+    width: 8%;
+}
+
+#footer { 
+    position:relative;
+    height: 10vh;
+    margin-bottom: 20px;
+}
+
+
+nav .menu{ 
+    width: 100%;
+    position: absolute;
+    top: auto;
+    right: 0;
+    bottom: 1px;
+    left: 0;
+    background: #f1f2f3;
+}
+
+html{    
+    height: 100%;
+}
+
+ul, li {
+    padding: 0px;
+    margin: 0;
+    list-style: none inside;
+}
+
+/*BOTONES DE DIAPOSITIVA*/ 
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+nav a{
+    font-size: calc( 1.2rem + 1vw );
+    text-decoration: none;
+    font-weight: bold;
+    color: #00324b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.8;
+    flex-grow: 1;
+    text-align: center;
+    border-top: 5px solid #00324b;
+    border-right: 1px solid #00324b;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+/*Comienza edición de producto */ 
+
+.wrapper { 
+    max-width: 500px;
+    background: #fff;
+    padding: 30px;
+    margin: auto;
+}
+
+.wrapper .title{ 
+    font-size: 24px;
+    font-weight: 700;
+    color: plum;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.wapper.form { 
+    width: 100%;
+}
+
+.wrapper .form .inputfield { 
+    margin-bottom: 15px;  
+}
+
+.wrapper .form .inputfield label { 
+color: #757575;
+font-size: 14px;
+}
+
+.wrapper .form .inputfield .input { 
+    width: 100%;
+    border: 1px solid #d5d5d5;
+    font-size: 15px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    margin-top: 20px;
+}
+
+.wrapper .form .inputfield .btn{
+    padding: 8px 10px;
+    font-size: 15px; 
+    border: 0px;
+    background:  plum;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 35%;
+    margin: 0px 0px 10px;
+}
+
+.wrapper .form .inputfield .btn:hover{
+    background: black;
+}
+
+
+@media (min-width:1280px){
+
+}
+@media (max-width:1279px){
+
+}
+@media (max-width:768px){
+
+}
+
+@media (max-width:480px){
+
+}

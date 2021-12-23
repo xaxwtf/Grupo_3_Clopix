@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html >
-<%- include('../partials/head')  %> 
-<body >
+    <head>
+        <meta name="viewport" content="width-device-width">
+
+        <link rel="stylesheet" href="/css/AltaProducto.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet">
+
+    </head>
+<body id="AltaProducto">
     <%- include('../partials/header')%>
-    <section class="AltaProducto">
+    <form method="post" action="/producto/" enctype="multipart/form-data">
         <label for="">Nombre del Producto</label>
+        <input type="text" name="nombre">
         <label for="">Descripcion</label>
-        <input type="text" >;
+        <input type="text" name="descripcion" >
         <label for="">Precio Unitario</label>
-        <input type="text">
-        <section class="talles">
-            <label for="">Talles</label>
-            <ul>
-                <li> <label><input type="checkbox" id="talleS" value="primero"> S</label> </li>
-                <li> <label><input type="checkbox" id="talleL" value="segundo"> L</label><br></li>
-                <li> <label><input type="checkbox" id="talleX" value="tercerox"> M</label><br></li>
-                <li> <label><input type="checkbox" id="talleXL" value="cuarto"> XL</label><br></li>
-                <li> <label><input type="checkbox" id="talleXXL" value="quinto"> XXL</label><br></li>
-                <li> <label><input type="checkbox" id="talleXXXL" value="quinto"> XXXL</label><br></li>
-            </ul>
-        </section>
+        <input type="text" name="precio">
+        <label for="">Talle</label>
+        <select name="talle">
+                <option selected value="Sin Elegir"> Elige una opción </option>
+                    <option value="S">S</option> 
+                    <option value="L">L</option> 
+                    <option value="M">M</option> 
+                    <option value="XL">XL</option> 
+                    <option value="XXL">XXL</option> 
+                    <option value="XXXL">XXXL</option> 
+         </select>
+         <label for="">Stock inicial</label>
+         <input type="text" name="unidades">
         <label for="">Selecionar Imagen</label>
-        <input type="file" name="ImagenProducto">
-    </section>
+        <input type="file" name="imagenProducto">
+        <button type="submit">Agregar Producto</button>
+    </form>
+    
     <%- include('../partials/footer')%>
 </body>
 </html>

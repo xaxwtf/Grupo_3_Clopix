@@ -9,50 +9,44 @@
 
     </head>
     <body>
-      <%- include('./partials/header')%>
+      <%- include('../partials/header')%>
     
         <div class="wrapper">
             <div class="title">
               Formulario de Registro 
             </div>
             
-            <div class="form">
+
+            <form action="/User/Alta" method="post" class="form">
               <div class="inputfield">
-                  <label>Nombre completo</label>
-                  <input type="text" class="input">
+                <label>Nombre completo</label>
+                <input type="text" class="input" name="nombreCompleto">
               </div>  
               
-            <div class="inputfield">
-              <label>E-mail</label>
-              <input type="text" class="input">
-            </div>  
-           <div class="inputfield">
-            <label>Celular</label>
-            <input type="text" class="input">
-         </div>  
-        
-         <!--Datos de ingreso-->
-        
-        
-        
-                <div class="inputfield">
-                  <label>Nombre de usuario</label>
-                  <input type="text" class="input">
-               </div>  
-               <div class="inputfield">
-                  <label>Contraseña</label>
-                  <input type="password" class="input">
-               </div>  
+              <div class="inputfield">
+                <label>E-mail</label>
+                <input type="text" class="input" name="mail">
+              </div>  
+              <div class="inputfield">
+                <label>Celular</label>
+                <input type="text" class="input" name="celular">
+              </div>  
+         <!--Datos de ingreso-->      
+              <div class="inputfield">
+                <label>Nombre de usuario</label>
+                <input type="text" class="input" name="usuario">
+              </div>  
+              <div class="inputfield">
+                <label>Contraseña</label>
+                <input type="password" class="input" name="pasword">
+              </div>  
               <div class="inputfield">
                   <label>Confirmar contraseña</label>
-                  <input type="password" class="input">
-               </div> 
-        
-             
-            
-        
-            
-             
+                  <input type="password" class="input" >
+              </div> 
+
+
+              
               <div class="inputfield terms">
                   <label class="check">
                     <input type="checkbox">
@@ -62,9 +56,7 @@
                </div> 
               <div class="inputfield">
                 
-                <a href="">
-                  <input type="submit" value="Crear cuenta" class="btn"  >
-                </a>
+                <button type="submit"> Crear Cuenta </button>
                 
               </div>
               
@@ -74,9 +66,9 @@
               <p>¿Ya tienes una cuenta?<a href="#">Iniciar sesión</a>.</p>
             </div>
               
-            </div>
+          </form>
         </div>	
-        <%- include('./partials/footer')%>
+        <%- include('../partials/footer')%>
 
     </body>
 </html>

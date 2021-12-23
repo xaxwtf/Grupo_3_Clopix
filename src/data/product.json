@@ -1,0 +1,56 @@
+[
+ {
+  "id": 1,
+  "nombre": "adict0",
+  "descripcion": "",
+  "image": "/images/product/p1.png",
+  "precio": 200,
+  "talle": "M",
+  "unidades": 100
+ },
+ {
+  "id": 2,
+  "nombre": "ajuarez1 ",
+  "image": "/images/product/p2.png",
+  "descripcion": "",
+  "talle": "L",
+  "precio": 150,
+  "unidades": 100
+ },
+ {
+  "id": 3,
+  "nombre": "gmayhew2",
+  "image": "/images/product/p3.png",
+  "descripcion": " ",
+  "talle": "XL",
+  "precio": 60,
+  "unidades": 100
+ },
+ {
+  "id": 4,
+  "nombre": "fspencelayh4",
+  "image": "/images/product/p5.png",
+  "descripcion": " ",
+  "talle": "XXXL",
+  "precio": 610,
+  "unidades": 100
+ },
+ {
+  "id": 5,
+  "nombre": "ahaeslier5",
+  "image": "/images/product/p6.png",
+  "descripcion": "",
+  "talle ": "S",
+  "precio": 700,
+  "unidades": 100
+ },
+ {
+  "id": 6,
+  "nombre": "bcaselli6",
+  "image": "/images/product/p7.png",
+  "descripcion": " ",
+  "talle": "M",
+  "precio": 890,
+  "unidades": 100
+ }
+]

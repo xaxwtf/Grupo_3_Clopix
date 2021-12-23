@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width">
+
+        <link rel="stylesheet" href="/css/CarritoStyle.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet">
+
+    </head>
+    <body>
+         <%- include('../partials/header')%>
+        <table id="ListaCompras">
+            <thead>
+                <tr>
+                    <th id="Producto">Producto</th>
+                    <th id="PrecioUnitario">Precio Unitario</th>
+                    <th id="Cantidad">Cantidad</th>
+                    <th id="PrecioTotal">Precio Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--prodcutos del carrito-->
+
+                <% for(let i=0;i<DetalleCompra.length;i++){ %> 
+               
+                    <tr >
+                        <td class="imagenProducto">
+                             <img src= <%= DetalleCompra[i].image %>  alt="Imagen de Producto" class="img" > 
+                        </td>
+                        <td class="dproducto"> 
+                            <label> <%= DetalleCompra[i].precio %> </label>
+                        </td>
+        
+                        <td class="dproducto">
+                            <button type="button"> <i class="fas fa-arrow-up"> </i> </button>
+                            <label for=""> <%= DetalleCompra[i].unidades %> </label>
+                            <button type="button"> <i class="fas fa-arrow-down"></i> </button>
+                        </td>
+        
+                        <td class="dproducto"> 
+                            <label><%= (DetalleCompra[i].precio* DetalleCompra[i].unidades) %> $</label>
+                        </td>
+        
+                        <td class="NoProducto">
+                            <form method="post" action= "/Producto/Carrito/<%= DetalleCompra[i].id %>/eliminar?_method=delete" > 
+
+                                <button type="submit"> <i class="far fa-trash-alt"></i> </button> 
+                            </form>
+                        </td>
+                    </tr>
+               
+                <% } %> 
+                <!-- fin del carrito-->
+            </tbody>
+            <tbody class="resultados">
+                <tr class="resultados">
+                    <td class="NoProducto"></td>
+                    <td class="NoProducto"></td>
+                    <td class="resultados">
+                        <label >Total Neto: </label>
+                    </td>
+                    <td class="resultados"> 
+                        <label > valor </label>
+                    </td>
+                    <td class="NoProducto"></td>
+                </tr>
+            </tbody>
+            
+
+
+        </table>
+        <section class="special"> 
+            <button submit >Realizar Pedido</button>
+            <br>
+            <button onclick="location.href='/producto'" > Seguir Comprando  </button> <!--es un boton para redireccionar, para ello usa la etiqueta location y usa su propiedad href asignandole a esta la ruta-->
+        </section>
+        <%- include('../partials/footer')%>
+    </body>
+</html>

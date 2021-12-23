@@ -1,0 +1,34 @@
+<head>
+    <meta name="viewport" content="width-device-width">
+
+    <link rel="stylesheet" href="/css/unProducto.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+rel="stylesheet">
+
+</head>
+<body>
+    <%- include("../partials/header") %> 
+    
+    <article>
+        <section>
+            <img src = <%= unP.image %>  alt="imagen Ejemplo"> 
+        </section>
+        <section>
+            <label for="Nombre"><%= unP.nombre %> </label>
+            <br>
+            <label for="Precio">Precio:<%= unP.precio %> </label>
+            <br>
+            <label for="Descripcion"> <%= unP.descripcion %> </label>
+            <br>
+            <div> Unidades:  <button><i class="far fa-plus-square"></i></button><label for="unidades"><%= unP.unidades %> </label><button><i class="far fa-minus-square"></i></button> </div>
+            <br>
+            <label> Talle: <%= unP.talle %>  </label>
+            <br>
+            <button type="submit">Añadir al Carrito </button>
+            <button type="submit">Volver al Catalogo </button>
+        </section>
+    </article>
+
+    <%- include("../partials/footer") %> 
+</body>
+</html>
