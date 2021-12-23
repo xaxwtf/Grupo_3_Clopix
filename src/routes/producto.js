@@ -20,7 +20,7 @@ routers.delete('/Carrito/:id/eliminar', productoCtrl.eliminarDelCarrito);
 routers.get('/',productoCtrl.Catalogo); ///listar productos
 routers.get('/Create',productoCtrl.alta); //form de creacion de productos
 routers.get('/:id',productoCtrl.Detalle); ///detalle de un producto en particular
-routers.post('/',upload.single('imagenProducto'),productoCtrl.CrearProducto);  ///accion de creacion (donde se envia los formularios)
+//routers.post('/',upload.single('imagenProducto'),productoCtrl.CrearProducto);  ///accion de creacion (donde se envia los formularios)
 routers.get('/:id/edit',productoCtrl.edit); /// form de edicion de productos
 routers.put('/:id',productoCtrl.editar); ///accion de edicion(donde se envia el formulario)
 routers.delete('/:id',productoCtrl.baja); ///accion de borrado
