@@ -2,13 +2,13 @@ const express = require('express');
 
 
 
-const userCtrl= require('../controllers/userCtrl');
+const userController= require('../controllers/userController');
 const userRoute= express.Router();
 
-userRoute.get('/login',userCtrl.login);
-userRoute.get('/register',userCtrl.registro);
-userRoute.get('/editUser',userCtrl.edit);
-userRoute.post('/Alta',userCtrl.crear)
+userRoute.get('/login',userController.login);
+userRoute.get('/register',userController.registro);
+userRoute.get('/editUser',userController.edit);
+userRoute.post('/Alta',userController.crear)
 userRoute.delete('/:id/Baja')
 userRoute.put('/:id/editar')
 

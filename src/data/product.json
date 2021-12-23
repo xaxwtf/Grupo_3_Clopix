@@ -52,5 +52,14 @@
   "talle": "M",
   "precio": 890,
   "unidades": 100
+ },
+ {
+  "id": 7,
+  "nombre": "LiSA",
+  "image": "/images/product/1640271925015_img_.jpg",
+  "descripcion": "the best",
+  "talle": "M",
+  "precio": "600000",
+  "unidades": "3"
  }
 ]

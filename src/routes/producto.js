@@ -2,28 +2,29 @@ const express = require('express');
 const path=require('path');
 
 const multer=require('multer');
-const productoCtrl= require('../controllers/productoCrl');
+const productoControlador= require('../controllers/productoController');
 const routers= express.Router();
 
 const storage = multer.diskStorage({ 
     destination: function (req, file, cb) { 
        cb(null, './public/images/product'); 
     }, 
-    filename: function (req, file, cb) { 
-       cb(null, `${Date.now()}_img_${path.extname(file.originalname)}`);  } 
-  })
+    filename: function (req, file, cb){ 
+       cb(null, `${Date.now()}_img_${path.extname(file.originalname)}`);  
+      } 
+  });
 const upload = multer({ storage });
-routers.get('/Carrito',productoCtrl.Carrito);
-routers.delete('/Carrito/:id/eliminar', productoCtrl.eliminarDelCarrito);     
+routers.get('/Carrito',productoControlador.Carrito);
+routers.delete('/Carrito/:id/eliminar', productoControlador.eliminarDelCarrito);     
 
 
-routers.get('/',productoCtrl.Catalogo); ///listar productos
-routers.get('/Create',productoCtrl.alta); //form de creacion de productos
-routers.get('/:id',productoCtrl.Detalle); ///detalle de un producto en particular
-//routers.post('/',upload.single('imagenProducto'),productoCtrl.CrearProducto);  ///accion de creacion (donde se envia los formularios)
-routers.get('/:id/edit',productoCtrl.edit); /// form de edicion de productos
-routers.put('/:id',productoCtrl.editar); ///accion de edicion(donde se envia el formulario)
-routers.delete('/:id',productoCtrl.baja); ///accion de borrado
+routers.get('/',productoControlador.Catalogo); ///listar productos
+routers.get('/Create',productoControlador.alta); //form de creacion de productos
+routers.get('/:id',productoControlador.Detalle); ///detalle de un producto en particular
+routers.post('/',upload.single('imagenProducto'),productoControlador.CrearProducto);  ///accion de creacion (donde se envia los formularios)
+routers.get('/:id/edit',productoControlador.edit); /// form de edicion de productos
+routers.put('/:id',productoControlador.editar); ///accion de edicion(donde se envia el formulario)
+routers.delete('/:id',productoControlador.baja); ///accion de borrado
 
 
 
