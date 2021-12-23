@@ -21,7 +21,7 @@ app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 
-app.use('/',(req,res)=>{
+app.get('/',(req,res)=>{
     res.render('index');
 });
 app.use('/Producto',rutaP);
