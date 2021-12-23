@@ -1,5 +1,5 @@
 
-const gArchivoJson=require('../model/jsonDataBase');
+const gArchivoJson=require('../model/controlDatos');
 let vProductos=gArchivoJson('product');
 let Detalle=gArchivoJson('listaComprasTest');
 const producto={

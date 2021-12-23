@@ -1,5 +1,5 @@
 const req = require('express/lib/request');
-const archivosJson=require('../model/jsonDataBase');
+const archivosJson=require('../model/controlDatos');
 let usuarios=archivosJson('Usuarios');
 const user={
     login:(req, res)=>{
