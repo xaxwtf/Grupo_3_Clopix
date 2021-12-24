@@ -1,6 +1,6 @@
 
 const gArchivoJson=require('../model/controlDatos');
-let vProductos=gArchivoJson('product');
+let dataProductos=gArchivoJson('product');
 let Detalle=gArchivoJson('listaComprasTest');
 const producto={
     alta:(req, res)=>{
@@ -13,16 +13,16 @@ const producto={
     },
     baja:(req,res)=>{
         let ins= req.params.id;
-        vProductos.delete(ins);
+        dataProductos.delete(ins);
         res.redirect('/Producto');
     },
     edit:(req, res)=>{
         let id=req.params.id;
-        res.render('Products/ModificarProducto',{producto:vProductos.find(id)});
+        res.render('Products/ModificarProducto',{producto:dataProductos.find(id)});
     },
     editar:(req,res)=>{
         let id=req.params.id;
-        let actual=vProductos.find(id);
+        let actual=dataProductos.find(id);
         
         if(req.body.newNombre!=""){
             actual.nombre=req.body.newNombre;
@@ -34,17 +34,17 @@ const producto={
         if(req.body.newPrecio!=""){
             actual.precio=req.body.newPrecio;
         }
-        vProductos.update(actual);
+        dataProductos.update(actual);
         res.redirect("/Producto/"+id+"/edit");
     }
     ,
     Catalogo:(req, res)=>{
-        res.render('Products/productDetail',{producto:vProductos.readFile()});
+        res.render('Products/productDetail',{producto:dataProductos.readFile()});
     },
     
     Detalle:(req, res)=>{
         let ins=req.params.id;
-        let recuperado=vProductos.find(ins);
+        let recuperado=dataProductos.find(ins);
         res.render('Products/unProducto',{ unP: recuperado });
     },
     Carrito:(req, res)=>{
@@ -60,8 +60,17 @@ const producto={
             precio: req.body.precio,
             unidades: req.body.unidades
         }
-        vProductos.create(nuevo);
+        dataProductos.create(nuevo);
         res.redirect('/Producto/');
+    },
+    AgregarAlCarrito:(req,res)=>{
+        let id=req.params.id;
+        let recuperado=dataProductos.find(id);
+        recuperado.unidades-1;
+        let copia=recuperado;
+        copia.unidades=1;
+        Detalle.create(copia);
+        res.redirect("/Producto/Carrito")
     }
     
 }

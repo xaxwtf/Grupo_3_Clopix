@@ -1,15 +1,6 @@
 [
  {
   "id": 1,
-  "nombre": "adict0",
-  "descripcion": "",
-  "image": "/images/product/p1.png",
-  "precio": 200,
-  "talle": "M",
-  "unidades": 100
- },
- {
-  "id": 2,
   "nombre": "ajuarez1 ",
   "image": "/images/product/p2.png",
   "descripcion": "",
@@ -18,7 +9,7 @@
   "unidades": 100
  },
  {
-  "id": 3,
+  "id": 2,
   "nombre": "gmayhew2",
   "image": "/images/product/p3.png",
   "descripcion": " ",
@@ -27,7 +18,7 @@
   "unidades": 100
  },
  {
-  "id": 4,
+  "id": 3,
   "nombre": "fspencelayh4",
   "image": "/images/product/p5.png",
   "descripcion": " ",
@@ -36,7 +27,7 @@
   "unidades": 100
  },
  {
-  "id": 5,
+  "id": 4,
   "nombre": "ahaeslier5",
   "image": "/images/product/p6.png",
   "descripcion": "",
@@ -45,7 +36,7 @@
   "unidades": 100
  },
  {
-  "id": 6,
+  "id": 5,
   "nombre": "bcaselli6",
   "image": "/images/product/p7.png",
   "descripcion": " ",
@@ -54,7 +45,7 @@
   "unidades": 100
  },
  {
-  "id": 7,
+  "id": 6,
   "nombre": "LiSA",
   "image": "/images/product/1640271925015_img_.jpg",
   "descripcion": "the best",

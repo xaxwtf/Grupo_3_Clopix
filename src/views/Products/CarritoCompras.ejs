@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width-device-width">
-
-        <link rel="stylesheet" href="/css/CarritoStyle.css">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    rel="stylesheet">
-
-    </head>
-    <body>
+    <%- include('../partials/head')  %> 
+    <body id="bodyCarritoCompras">
          <%- include('../partials/header')%>
         <table id="ListaCompras">
             <thead>
@@ -27,7 +20,7 @@
                
                     <tr >
                         <td class="imagenProducto">
-                             <img src= <%= DetalleCompra[i].image %>  alt="Imagen de Producto" class="img" > 
+                             <img src= <%= DetalleCompra[i].image %>  alt="Imagen de Producto"  > 
                         </td>
                         <td class="dproducto"> 
                             <label> <%= DetalleCompra[i].precio %> </label>
@@ -67,9 +60,6 @@
                     <td class="NoProducto"></td>
                 </tr>
             </tbody>
-            
-
-
         </table>
         <section class="special"> 
             <button submit >Realizar Pedido</button>

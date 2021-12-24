@@ -3,6 +3,7 @@ const path=require('path');
 
 const multer=require('multer');
 const productoControlador= require('../controllers/productoController');
+const producto = require('../controllers/productoController');
 const routers= express.Router();
 
 const storage = multer.diskStorage({ 
@@ -16,7 +17,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 routers.get('/Carrito',productoControlador.Carrito);
 routers.delete('/Carrito/:id/eliminar', productoControlador.eliminarDelCarrito);     
-
+routers.post('/:id/agregarCarrito',productoControlador.AgregarAlCarrito);
 
 routers.get('/',productoControlador.Catalogo); ///listar productos
 routers.get('/Create',productoControlador.alta); //form de creacion de productos
