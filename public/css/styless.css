@@ -758,6 +758,44 @@ body#bodyRegister{
 }
 /*fin register*/
 
+/*alta Producto*/
+#AltaProducto form{
+  display: flex;
+  background-color: black;
+  border: 1px solid white;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  margin: 0px;
+  padding: 5px;
+  font-size:x-large;
+ 
+}
+
+#AltaProducto {
+  color: white;
+  width: 100%;
+  height: 100vh;
+  justify-items: center;
+  align-content: flex-end;
+  background-color: black;
+  margin: 20px;
+  padding: 10px;
+}
+#AltaProducto input{
+  color: black;
+}
+#AltaProducto button{
+  color: black;
+}
+#AltaProducto select{
+  color: black;
+}
+#AltaProducto option{
+  color: black;
+}
+/*fin alta Producto*/
+
 /*footer*/
 section.infoContacto{
     align-items: flex-end;
