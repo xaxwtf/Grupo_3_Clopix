@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    width: 100%;
+    background-image: url("https://cdn.shopify.com/s/files/1/1171/8456/files/71530421_729406894232388_5302369846022799223_n_1024x1024.jpg?v=1636497317");
+    background-size: cover;
+}
+
+/*header*/
+img{
+    width: 100%;
+    height: 100%;
+}
+
+header{
+    background-color: white;
+    border: 5px solid #f0cddc;
+}
+header nav ul li a{
+    width: 15%;
+    color: #99DDCC;
+    font-size: 30px; 
+} 
+header nav ul li{
+    display: flex;
+    width: 25%;
+    align-content: center;
+    justify-content:space-between;
+}
+header nav ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+form{
+    display: flex;
+    border: 1px solid white;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    margin: 0px;
+    padding: 5px;
+    font-size:x-large
+}
+
+#footer { 
+    position:relative;
+    height: 10vh;
+    margin-bottom: 20px;
+    width: 100px;
+    height: auto;
+}
+footer a img{
+    width: 8%;  
+}
+
+img.redesSociales{
+    align-items: flex-end;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+nav ul li {
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.8;
+    flex-grow: 1;
+    text-align: center;
+    border-top: 5px solid #00324b;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+/*empieza el formulario de perfil*/
+
+.wrapper.title{ 
+    color: plum;
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: plum;
+    text-transform: uppercase;
+    text-align: center;   
+    font-weight: 700;
+}
+
+label { 
+    color: #757575;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    width: 200px;
+    display: flex;
+    
+}
+
+.wrapper { 
+    width: 100%;
+    background: #fff;
+    margin: 20px auto;
+    box-shadow: 1px 1px 2px rgb(0 0 0 / 13%);
+    padding: 30px;
+    max-width: 500px;   
+}
+
+tr td.camposcompletar{
+    margin-bottom: 15px;
+    display: flex;    
+}
+
+button{
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 15px;
+    border: 0px;
+    background: plum;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+}
+
+
+input { 
+    width: 100%;
+    outline: none;
+    border: 1px solid #d5dbd9;
+    font-size: 15px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/*section {
+    display: block;
+}
+section.infoContacto {
+    align-items: flex-end;
+}*/
+
+.imagen-perfil {
+        border: 5px solid;
+        border-radius: 50%;
+        border-color: turquoise;
+        margin-top: 10px;    
+        margin-bottom: 10px;
+        margin-left: 100px;
+}
+
+.imagen-avatar-perfil { 
+        width: 200px;
+}

@@ -102,12 +102,12 @@ const modelController = function (name) {
             console.log(enVenta)
             return enVenta
 
+        },
+        findByAll: function (parametro,valorRequerido ) {
+            let rows = this.readFile();
+            console.log(" --- por el findByAll");
+            return rows.find(i => i[parametro] == valorRequerido);
         }
-
-       
-
-
-
     }
 }
 

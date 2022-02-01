@@ -1,18 +1,21 @@
 [
  {
   "id": 1,
-  "nombreCompleto": "ariel",
-  "mail": "xaxwtf@gmail.com",
-  "usuario": "Sariel1997",
-  "pasword": "cat",
-  "celular": "01167286912"
+  "avatar": "imagendeperfil.png",
+  "nombreCompleto": "antonio",
+  "mail": "churqui98@gmail.com",
+  "user": "myth",
+  "pasword": "$2a$04$Dr2cUIU1bOZ9fDUMRcfBHuypr7DMBsTccwadMG2h/11bY88YVjRCG",
+  "celular": "64963575"
  },
+
  {
   "id": 2,
+  "avatar": "1643587852586_img_.jpg",
   "nombreCompleto": "ariel",
-  "mail": "churqui98@gmail.com",
-  "usuario": "mimoariel",
-  "pasword": "123",
-  "celular": "01167286912"
+  "mail": "mimoariel@gmail.com",
+  "user": "asdsadsad",
+  "pasword": "$2a$04$r8T3DC/SFRliVzIo4oy0Uu8KSqMrnZ7rRPtMqevi.vjT..AzD0ELa",
+  "celular": "78252578"
  }
 ]

@@ -10,43 +10,68 @@
             </div>
             
 
-            <form action="/User/Alta" method="post" class="form">
+            <form action="/User/Alta" method="post" enctype="multipart/form-data" class="form">
               <div class="inputfield">
                 <label>Nombre completo</label>
-                <input type="text" class="input" name="nombreCompleto">
-              </div>  
-              
+                <input type="text" class="input" name="nombreCompleto" required>
+                <% if(locals && locals.errors && locals.errors.nombreCompleto){ %>
+                  <p><%= errors.nombreCompleto.msg %> </p>
+                <% } %>
+              </div>
+               
+          
               <div class="inputfield">
                 <label>E-mail</label>
-                <input type="text" class="input" name="mail">
-              </div>  
+                <input type="text" class="input" name= "mail" required>
+              </div>
+              <% if(locals && locals.errors && locals.errors.mail){  %>
+                <p><%= errors.mail.msg %> </p>
+                <% } %>   
               <div class="inputfield">
                 <label>Celular</label>
-                <input type="text" class="input" name="celular">
-              </div>  
+                <input type="number" class="input" name="celular" required >
+              </div>
+              <% if(locals && locals.errors && locals.errors.celular){  %>
+                <p><%= errors.celular.msg %> </p>
+                <% } %> 
          <!--Datos de ingreso-->      
               <div class="inputfield">
                 <label>Nombre de usuario</label>
-                <input type="text" class="input" name="usuario">
-              </div>  
+                <input type="text" class="input" name="user" required>
+              </div>
+              <% if(locals && locals.errors && locals.errors.user){  %>
+                <p><%= errors.user.msg %> </p>
+                <% } %>   
               <div class="inputfield">
                 <label>Contraseña</label>
-                <input type="password" class="input" name="pasword">
-              </div>  
+                <input type="password" class="input" name="pasword" required>
+              </div> 
+              <% if(locals && locals.errors && locals.errors.pasword){  %>
+                <p><%= errors.pasword.msg %> </p>
+                <% } %>  
               <div class="inputfield">
                   <label>Confirmar contraseña</label>
-                  <input type="password" class="input" >
+                  <input type="password" class="input" name="passwordConfirm" required>
+                  <br> 
+                  <% if(locals && locals.errors && locals.errors.passwordConfirm){  %>
+                    <p><%= errors.passwordConfirm.msg %> </p>
+                    <% } %>  
               </div> 
 
+            <!--imagen de perfil-->
 
-              
-              <div class="inputfield terms">
+            <input type="file" class="image-profile" name="avatar">            
+
+            <!--terms-->
+
+              <div class="inputfield terms" >
                   <label class="check">
-                    <input type="checkbox">
+                    <input type="checkbox" name="terminosyCondiciones" required>
                     <span class="checkmark"></span>
                   </label>
                   <p>Acepto términos y condiciones</p>
-               </div> 
+               </div>
+              
               <div class="inputfield">
                 
                 <button type="submit"> Crear Cuenta </button>
@@ -58,6 +83,8 @@
             <div class="container-signin">
               <p>¿Ya tienes una cuenta?<a href="#">Iniciar sesión</a>.</p>
             </div>
+
+
               
           </form>
         </div>	

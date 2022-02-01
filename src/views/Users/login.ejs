@@ -11,23 +11,23 @@
         Inicio de sesión 
     </div>
 
-    <div class="form">
+    <form action="/user/loading" method="post">
         <div class="inputfield">
         <label>Usuario</label>
-        <input type="text" class="input">
+        <input type="text" class="input" name="user">
         </div>  
   
         <div class="inputfield"> 
         <label>Contraseña</label>
-        <input type="text" class="input">
+        <input type="password" class="input" name="password">
         </div>
 
         <div class="inputfield">
         <a href="">
-        <input type="submit" value="Iniciar sesión" class="btn"  >
+            <button type="submit">Logear</button>
         </a>
         </div>
-    </div>
+    </form>
 
 
 </div>
