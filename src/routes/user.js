@@ -40,6 +40,9 @@ userRoute.put('/:id/editar');
 userRoute.get('/register',userController.registro);
 userRoute.get('/:user/profile',userTest.isLogged,userController.perfil);
 userRoute.get('/unloged',userController.unLoged);
+userRoute.put('/:user/editPerfil',userController.editProfile); 
+
+
 
 
 

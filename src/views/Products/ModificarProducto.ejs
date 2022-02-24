@@ -8,7 +8,7 @@
     <body id="bodyModificarProducto">
         <%- include('../partials/header')%>
 
-        <form action="/Producto/<%= producto.id%>?_method=put" method="post">
+        <form action="/Producto/<%= producto.id %>/edit?_method=put" method="post" enctype="multipart/form-data">
             <div class="wrapper">
                 <div class="title">
                     PRODUCTO PERSONALIZADO
@@ -18,21 +18,25 @@
         
                     <div class="inputfield">
 
-                        <label> <b>Nombre del producto Actual: </b>   <%= producto.nombre%> </label>
+                        <label> <b>Nombre del producto Actual: </b>   <%= producto.nameProduct %> </label>
                         <input type="text" class="input" name="newNombre">
                     </div> 
 
                     <div class="inputfield">
                         
-                        <label> <b>Descripción Actual:  </b>  <%= producto.descripcion %></label>
+                        <label> <b>Descripción Actual:  </b>  <%= producto.description %></label>
                         
                         <input type="text" class="input" name="newDescripcion">
                     </div> 
 
                     <div class="inputfield"> 
                     
-                        <label> <b> Precio Actual: $</b>  <%= producto.precio %> </label>
+                        <label> <b> Precio Actual: $</b>  <%= producto.priceUnit %> </label>
                         <input type="text" class="input" name="newPrecio">
+                    </div>
+                    <div class="inputfield">
+                        <img src="/images/product/<%= producto.image_product %>"  alt="imagenProducto" style="width: 100%;">
+                        <input type="file" name="newImageProduct">
                     </div>
                 </div>
             </div>

@@ -1,30 +1,55 @@
-
 [
  {
-  "id": 4,
-  "nombre": "nharbage3",
-  "image": "/images/product/p4.png",
-  "descripcion": " ",
-  "talle": "XXL",
-  "precio": 260,
-  "unidades": 1
+  "id": 1,
+  "nameProduct": "producto1",
+  "image_product": "p4.png",
+  "description": "no tengo mucha imaginacion!",
+  "talle_id_id": 4,
+  "priceUnit": 260,
+  "stock": 1
  },
  {
-  "id": 5,
-  "nombre": "LiSA",
-  "image": "/images/product/1640271925015_img_.jpg",
-  "descripcion": "the best",
-  "talle": "M",
-  "precio": "600000",
-  "unidades": 1
+  "id": 2,
+  "nameProduct": "LiSA",
+  "image_product": "p2.png",
+  "description": "the best",
+  "talle_id": "M",
+  "priceUnit": "600000",
+  "stock": 1
  },
  {
   "id": 6,
-  "nombre": "bcaselli6",
-  "image": "/images/product/p7.png",
-  "descripcion": " ",
-  "talle": "M",
-  "precio": 890,
-  "unidades": 1
+  "nameProduct": "bcaselli6",
+  "image_product": "p7.png",
+  "description": " ",
+  "talle_id": "M",
+  "priceUnit": 890,
+  "stock": 1
+ },
+ {
+  "id": 7,
+  "nameProduct": "fspencelayh4",
+  "image_product": "p5.png",
+  "description": " ",
+  "talle_id": "XXXL",
+  "priceUnit": 610,
+  "stock": 1
+ },
+ {
+  "id": 8,
+  "nameProduct": "ahaeslier5",
+  "image_product": "p6.png",
+  "description": "",
+  "talle_id ": "S",
+  "priceUnit": 700,
+  "stock": 1
+ },
+ {
+  "id": 4,
+  "nameProduct": "algo2",
+  "description": "danw",
+  "priceUnit": 250,
+  "talle_id": 5,
+  "image_product": "p3.jpg"
  }
 ]

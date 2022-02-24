@@ -7,18 +7,18 @@
     <article>
         <form action="/Producto/<%= unP.id %>/agregarCarrito" method="post">
             <section>
-                <img src = <%= unP.image %>  alt="imagen Ejemplo"> 
+                <img src ="/images/product/<%= unP.image_product %>"  alt="imagen Ejemplo"> 
             </section>
             <section>
-                <label for="Nombre"><%= unP.nombre %> </label>
+                <label for="Nombre"><%= unP.nameProduct %> </label>
                 <br>
-                <label for="Precio">Precio:<%= unP.precio %> </label>
+                <label for="Precio">Precio:<%= unP.priceUnit %> </label>
                 <br>
-                <label for="Descripcion"> <%= unP.descripcion %> </label>
+                <label for="Descripcion"> <%= unP.description %> </label>
                 <br>
                 <div> Unidades:  <button><i class="far fa-plus-square"></i></button><label for="unidades"><%= unP.unidades %> </label><button><i class="far fa-minus-square"></i></button> </div>
                 <br>
-                <label> Talle: <%= unP.talle %>  </label>
+                <label> Talle: <%= unP.talles.name_size %>  </label>
                 <br>
             </section>
             <button type="submit" >Añadir al Carrito </button>

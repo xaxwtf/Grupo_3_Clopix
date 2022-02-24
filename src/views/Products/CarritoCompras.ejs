@@ -20,20 +20,20 @@
                
                     <tr >
                         <td class="imagenProducto">
-                             <img src= <%= DetalleCompra[i].image %>  alt="Imagen de Producto"  > 
+                             <img src= "/images/product/<%= DetalleCompra[i].image_product %>"  alt="Imagen de Producto"  > 
                         </td>
                         <td class="dproducto"> 
-                            <label> <%= DetalleCompra[i].precio %> </label>
+                            <label> <%= DetalleCompra[i].priceUnit %> </label>
                         </td>
         
                         <td class="dproducto">
                             <button type="button"> <i class="fas fa-arrow-up"> </i> </button>
-                            <label for=""> <%= DetalleCompra[i].unidades %> </label>
+                            <label for=""> <%= DetalleCompra[i].stock %> </label>
                             <button type="button"> <i class="fas fa-arrow-down"></i> </button>
                         </td>
         
                         <td class="dproducto"> 
-                            <label><%= (DetalleCompra[i].precio* DetalleCompra[i].unidades) %> $</label>
+                            <label><%= (DetalleCompra[i].priceUnit* DetalleCompra[i].stock) %> $</label>
                         </td>
         
                         <td class="NoProducto">
