@@ -427,11 +427,14 @@ body#bodyHome{
   }
   
   #bodyHome .caja-detalle{
-    border: 3px black solid;
+    border: 3px white solid;
     padding: 15px;
     background: rgb(241,104,193);
     background: linear-gradient(207deg, rgba(241,104,193,1) 0%, rgba(242,223,231,1) 1%); 
-  
+    Font-family: Garamond;
+    
+    
+    
   }
   #bodyHome main section article .caja-detalle{
     position: relative;
@@ -879,6 +882,24 @@ font-size: 16px;
 
 /*ERROR 404*/
 
+/*MENU ADMIN*/
+body#MenuAdmin{
+  background-color: #FF5DA2;
+}
+body#MenuAdmin div{
+  height: 59vh;
+}
+body#MenuAdmin div ul{
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+}
+
+body#MenuAdmin div ul li{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
 @media (min-width:1280px){
 
 }

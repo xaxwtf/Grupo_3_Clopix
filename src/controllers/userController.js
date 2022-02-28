@@ -1,8 +1,7 @@
-const req = require('express/lib/request');
 const bycript=require('bcryptjs');
 const db=require('../../database/models');
 const { validationResult } = require('express-validator');
-
+const fs=require('fs');
 const user={
     login:(req, res)=>{
         res.render('Users/login');
@@ -67,62 +66,125 @@ const user={
                 rol_id:2
             } 
             db.Usuarios.create(nuevo); 
-        }
             res.redirect("/");
+        }
+        else{
+            if(req.file.filename!="defecto.png"){
+                try {
+                    fs.unlinkSync(__dirname+"/../../public/images/avatar/"+req.file.filename);
+                    console.log('File removed');
+                } catch(err) {
+                    console.error('Something wrong happened removing the file', err);
+                  }
+            }
+        }
+            
         
         res.redirect("Users/register");
         
     },
     logear:(req,res)=>{
-        let us=usuarios.findByAll("user",req.body.user);
-        
-        console.log(us);
-        db.Usuarios.findOne({include:"Rol"},{
+        db.Usuarios.findOne({
             where:{
-                user:req.body.user
-            }
+                username:req.body.user
+            },
+            include:[{association:"Roles"}]
         }).then(resultado=>{
-            if(req.body.user==resultado.username && bycript.compareSync(req.body.password,resultado.pasword)&&resultado.rol=="admin" ){
+
+            if(resultado.Roles.name_rol=='admin' && req.body.user==resultado.username && bycript.compareSync(req.body.password,resultado.password) ){
+                console.log("soy admin!!!!!!!!!!!!!!!!!!!!!!!!!");
                 admin={ 
                     user:req.body.user,
-                    pasword:"$2a$10$2oQJw5CU/tkhxYsWu5vPg.GA/S4JSx0r6.PnakbvSM8fFal1zonQS"
+                    pasword:resultado.password,
+                    tipe:resultado.Roles.name_rol
                 }
                 req.session.userLogged=admin;
                 return res.redirect("/admin/menu");
             }
-            else if(req.body.password == resultado.password && bycript.compareSync(req.body.password,resultado.password)){
+            else if(resultado.Roles.name_rol == 'client' && req.body.user == resultado.username && bycript.compareSync(req.body.password,resultado.password)){
+                console.log("soy CLIENT!!!!!!!!!!!!!!!!!!!!!!!!!");
                 req.session.userLogged={ 
                     user:resultado.username,
-                    pasword: resultado.password
+                    pasword: resultado.password,
+                    tipe:resultado.Roles.name_rol
                 }; 
-                return res.redirect("/user/"+us.user+"/profile");
+                return res.redirect("/user/"+resultado.username+"/profile");
             }
             else{
+                console.log("No entra a ningun iff");
                  res.redirect("/user/login");
             }
-        }).catch(error=>console.log(error));
+        });
         
        
         
         
     }, 
-    perfil:(req,res) => { 
-        res.render('Users/perfil',{usuario: req.session.userLogged});
+    perfil:(req,res) => {
+        db.Usuarios.findOne({where:{username:req.session.userLogged.user }}).then(resultado=>{
+            res.render('Users/perfil',{usuario: resultado});
+        })
+        
     },
     unLoged:(req,res)=>{
         req.session.destroy();
         return res.redirect("/");
     },
-    editProfile:(req,res) => { 
-        db.Usuarios.update({ 
-         password: bycript.hashSync(req.body.newpassword)
-        },{
-        where: {
-            username: req.params.user
-        }
-        });
-        res.redirect("/Producto/"+req.params.user+"/Profile");
-    }
+    
+    editProfile:(req , res) => { 
+        db.Usuarios.findOne({
+            where:{
+                username:req.params.user
+            }
+        }).then(r=>{
+            console.log("EL VALOR DE REQ.BODY.PREV");
+            console.log(req.body.prevPassword);
+            if( bycript.compareSync(req.body.prevPassword,r.password)&& req.body.newpassword==req.body.newpasswordConfirm){
+                db.Usuarios.update({ 
+                    password: bycript.hashSync(req.body.newpassword,3)
+                   },{
+                where: {
+                       username: req.params.user
+                   }
+                });
+                console.log("PASSWORD CAMBIADA CORRECTAMENTE")
+                res.redirect("/User/"+req.params.user+"/Profile");
+
+            }
+            else{
+                console.log("EL R TIENE");
+                console.log(r);
+            }
+        }).catch(error=>console.log(error));
+        
+        
+        
+    },
+    editImageProfile:(req , res)=>{
+        db.Usuarios.findOne({
+            where:{ 
+                username:req.params.user
+            }
+        }).then(result=>{
+            
+            if(result.avatar_image!="imagendeperfil.png"){
+                try {
+                    fs.unlinkSync(__dirname+"/../../public/images/avatar/"+result.avatar_image);
+                    console.log('File removed');
+                } catch(err) {
+                    console.error('Something wrong happened removing the file', err);
+                }
+            }
+            db.Usuarios.update({
+                avatar_image:req.file.filename
+            },{
+                where:{
+                    username:req.params.user
+                }
+            });
+            res.redirect("/user/"+req.params.user+"/profile");
+        })
+    } 
 }
 
 module.exports=user;

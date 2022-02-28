@@ -5,6 +5,7 @@ const { body } = require('express-validator');
 const userController= require('../controllers/userController');
 const userTest=require('../myMiddlewares/guestTest');
 
+
 let validationUser=[
    body('nombreCompleto').notEmpty().isLength({min:3}).withMessage("el nombre debe tener al menos 3 caracteres"),
    body('mail').notEmpty().withMessage("Campo Obligatorio").bail(),
@@ -41,7 +42,7 @@ userRoute.get('/register',userController.registro);
 userRoute.get('/:user/profile',userTest.isLogged,userController.perfil);
 userRoute.get('/unloged',userController.unLoged);
 userRoute.put('/:user/editPerfil',userController.editProfile); 
-
+userRoute.put('/:user/editImage',upload.single('newAvatar'),userController.editImageProfile);
 
 
 

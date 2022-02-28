@@ -2,45 +2,40 @@
 <html>
     <head>
         <meta name="viewport" content="width-device-width">
-
         <link rel="stylesheet" href="/css/perfil.css">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     </head>
-
-<%- include('../partials/header')%>
-
-<div class="wrapper">
-    <div class="title">
-        MI PERFIL 
-    </div> 
-
-        <form action="user/<%= usuario.user %>/editPerfil" method="post" enctype="multipart/form-data"> </form>
-
-            <label for="">Nombre de usuario: <%= usuario.user %> </label>
-
+    <body>
+        <%- include('../partials/header')%>
+            <div class="title">
+                MI PERFIL 
+            </div> 
+            <label for="">Nombre de usuario: <%= usuario.username %> </label>
             <div class ="imagen-avatar-perfil"> 
-            <img src="/images/avatar/<%= usuario.avatar %>"  alt="imagendeperfil" class="imagen-perfil" style="width: 100%;">
+            <img src="/images/avatar/<%= usuario.avatar_image %>"  alt="imagendeperfil" class="imagen-perfil" style="width: 100%;">
             </div>
+            <form action="/User/<%= usuario.username %>/editImage?_method=put" method="post" enctype="multipart/form-data">
+                <input type="file" name="newAvatar">
+                <button type="submit">Cambiar Imagen</button>
+            </form>
 
-            <label for="">Nombre Completo: <%= usuario.nombreCompleto %> </label>
+            <label for="">Nombre Completo: <%= usuario.full_name %> </label>
             
-            <label for="">Mail: <%= usuario.mail %> </label>
-            <label for="">Celular: 054 11-<%= usuario.celular %>  </label>
+            <label for="">Mail: <%= usuario.email %> </label>
+            <label for="">Celular: 054 11-<%= usuario.phone %>  </label>
             <br>
+        <form  action="/User/<%= usuario.username %>/editPerfil?_method=put" method="post">
+            <label for="">Anterior Contraseña: </label>
+            <input type="password" name="prevPassword" >
+
             <label for="">nueva contraseña:</label>
-            <input type="password" name="newpassword">
-<<<<<<< HEAD
-=======
-
-            
->>>>>>> 0a66bc8aa516b9568714afac537c6c8eebaf7ac6
+            <input type="password" name="newpassword"> 
+            <label for="">confirmar contraseña:</label>
+            <input type="password" name="newpasswordConfirm"> 
             <button type="submit">Cambiar Contraseña</button>
-
         </form>
 
-<%- include('../partials/footer')%>    
-
+        <%- include('../partials/footer')%>    
     </body>
 
 </html>

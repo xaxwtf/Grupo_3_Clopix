@@ -7,7 +7,7 @@ const userTest={
         }
         next();
     },
-    isLogged:(req, res,next )=>{
+    isLogged:(req, res, next )=>{
         console.log(req.session.userLogged);
         if(!req.session.userLogged){
             return res.redirect('/user/login');
@@ -19,7 +19,7 @@ const userTest={
         us= req.session.userLogged;
         console.log("CONTROLADOR ADMIN");
         console.log(req.session.userLogged);
-        if( req.session.userLogged  && us.user=="admin"){  
+        if( req.session.userLogged  && us.user=="admin" && us.tipe=="admin"){  
             console.log("estoy logeado!!!!!");    
             next();
         }
