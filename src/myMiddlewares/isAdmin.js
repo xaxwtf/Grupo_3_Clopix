@@ -5,7 +5,6 @@ function esAdmin(req, res,next){
         res.locals.isAdmin=true;
         
     }
-    console.log("Soy ADMIN?:"+res.locals.isAdmin);
     next();
 }
 module.exports=esAdmin;

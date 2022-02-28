@@ -19,11 +19,12 @@ const userTest={
         us= req.session.userLogged;
         console.log("CONTROLADOR ADMIN");
         console.log(req.session.userLogged);
-        if( req.session.userLogged  && us.user=="admin" && us.tipe=="admin"){  
+        if(!(req.session.userLogged  && us.user=="admin" && us.tipe=="admin")){  
             console.log("estoy logeado!!!!!");    
-            next();
+            return res.redirect("/user/login");
         }
-        return res.redirect("/user/login");
+        next();
+        
     }
 }
 
