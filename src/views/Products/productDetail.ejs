@@ -8,24 +8,18 @@
 
             <% for(let i=0;i<producto.length;i++){ %> 
                 <article>
-                    <section class="imagenProducto">
-                        <% if(locals.isAdmin) {%>
-                            <a href= <%= "/Producto/"+producto[i].id+"/edit" %>  > <img src = "/images/product/<%= producto[i].image_product %>"  alt="imagen Ejemplo">    </a> 
-                        <% } %>
-                        <% if(!locals.isAdmin){  %>
-                            <a href= <%= "/Producto/"+producto[i].id %>  > <img src = "/images/product/<%= producto[i].image_product %>"  alt="imagen Ejemplo">    </a> 
-                        <% } %>    
-                           
-                    </section>
+                    <% if(locals.isAdmin) {%>
+                        <a href= <%= "/Producto/"+producto[i].id+"/edit" %>  > <img src = "/images/product/<%= producto[i].image_product %>"  alt="imagen Ejemplo">    </a> 
+                    <% } %>
+                    <% if(!locals.isAdmin){  %>
+                        <a href= <%= "/Producto/"+producto[i].id %>  > <img src = "/images/product/<%= producto[i].image_product %>"  alt="imagen Ejemplo">    </a> 
+                    <% } %>    
                     <section class="datos">
                         <b>   <label for="Nombre" class="Nombre"><%= producto[i].nameProduct %> </label>   </b>    
                         <label for="Precio" class="Precio">$<%= producto[i].priceUnit %> </label>
                     </section>
                 </article>
             <% } %> 
-            <!--copias-->
-                
-            </article>
         </section>
         <%- include('../partials/footer')%>
 

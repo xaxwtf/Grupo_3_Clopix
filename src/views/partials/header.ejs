@@ -7,19 +7,25 @@
             <li><a href="/Producto">Catálogos</a></li>
             <li><a href="#">Nosotr@s</a></li>
 
-                <a href="/"><i class="fas fa-home" style="color: black;"></i></a>
-                <a href="/Producto/"><i class="fas fa-tag" style="color: black;"></i></a>
-                <a href="/Producto/Carrito"> <i style="color: black;" class="fas fa-shopping-cart"> </i></a>
-                <a href="/User/register"> <i style="color: black;" class="far fa-user"></i> </a>
+                <a href="/"><i class="fas fa-home" ></i></a>
+                <a href="/Producto/"><i class="fas fa-tag"></i></a>
+                <a href="/Producto/Carrito"> <i class="fas fa-shopping-cart"> </i></a>
+                <% if(locals.isAdmin){%>
+                  <a href="/admin/menu"> <i class="fa-solid fa-gear"></i> </a>
+                <%}  %> 
+                <a href="/User/register"> <i class="far fa-user"></i> </a>
                 <% if(!locals.loggedIsTrue){%>
-                <a href="/User/login"> <i style="color: black;" class="fas fa-sign-in-alt"> </i> </a>
+                <a href="/User/login"> <i  class="fas fa-sign-in-alt"> </i> </a>
                 <%}  %> 
                 <% if(locals.loggedIsTrue){%>
+                  <a href="/user/myth/profile"><i class="fas fa-align-justify"></i></a>  
                   <a href="/User/unloged"><i class="fas fa-sign-out-alt"></i></a>
                 <%}  %>  
-            
+                
           </ul>
       </nav>
+      <script src="https://kit.fontawesome.com/f2043d250d.js" crossorigin="anonymous"></script>
 </header>
+
 
 

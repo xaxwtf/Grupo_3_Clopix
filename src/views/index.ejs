@@ -3,110 +3,54 @@
 <%- include('./partials/head') %> 
     <body id="bodyHome">
         <%- include('./partials/header')%>
-
-
-
-        <section><!-- prueba del slider-->
-
-            <ul class="slider">
-                <li id="slide1"><img src="/images/slide1.jpeg" alt=""></li>
-                <li id="slide2"><img src="/images/slide2.jpeg" alt=""></li>
-                <li id="slide3"><img src="/images/slide3.jpeg" alt=""></li>
-             </ul>
-           
-
-             <nav>
-                <ul class="slide-num">
-                    <li><a href="#slide1">1</a></li>
-                    <li><a href="#slide2">2</a></li>
-                    <li><a href="#slide3">3</a></li>
-            </ul>
-            </nav>
-        
-  
-        </section><!-- fin prueba del slider-->
-
-
                    <!--PRINCIPIO DEL MAIN-->
-                   <main>
-                    <br><br>
+                <main>
+                    <section class="slider"><!-- prueba del slider-->
+
+                            <ul class="slider">
+                                <li id="slide1"><img src="/images/slide1.jpeg" alt=""></li>
+                                <li id="slide2"><img src="/images/slide2.jpeg" alt=""></li>
+                                <li id="slide3"><img src="/images/slide3.jpeg" alt=""></li>
+                            </ul>
+                    </section><!-- fin prueba del slider-->
                     <h3>Basado en tu ultima visita</h3>
-                    <br>
-                    <section>
-                        
-             
+                    <section class="Ofertas">
                         <article>
                             <img src="/images/KyotoPastel-BomberJacketFront_180x.png" alt="" width="360">
-            
                             <div class="caja-detalle">
-            
-                                <i class="fas fa-truck"></i>
-            
-            
-                                <div class="precio-descuento">
-            
-                            <p class="precio">$455</p>
-            
-                            <p class="descuento">CHAQUETA BOMBER 40% off</p>
-            
-            
-                                    </div>
-            
-                            <h4></h4>
-                        </div>
-            
-                            </article>
-                        
-            
-                        </article>
-            
-            
-                        <article>
-                            <img src="/images/7F_180x.png" alt="" width="360">
-            
-                            <div class="caja-detalle">
-            
                                 
-                                <i class="fas fa-truck"></i>
-            
-            
                                 <div class="precio-descuento">
-            
-                            <p class="precio">$150</p>
-            
-                            <p class="descuento">VICE CAMISA HAWAIANA 20% off</p>
-            
-                            </div>
-            
-                            <h4></h4>
-            
+                                    <p class="precio">$455</p>
+                                    <p class="descuento">CHAQUETA BOMBER 40% off</p>
+                                </div>
+                                <i class="fas fa-truck"></i>
                             </div>
                         </article>
-            
-            
+
                         <article>
-                            <img src="/images/NewChallengerall_over_print_hoodieFRONT_180x.png" alt="" width="360">
-                            
+                            <img src="/images/7F_180x.png" alt="" >
                             <div class="caja-detalle">
-                                <i class="fas fa-truck"></i>
-            
                                 <div class="precio-descuento">
-                            <p class="precio">$230</p>
-            
-                            <p class="descuento">SUDADERA NEW CHALLENGER 20% off</p>
-            
-                            </div>
-            
-                            <h4></h4>
-            
+                                    <p class="precio">$150</p>
+                                    <p class="descuento">VICE CAMISA HAWAIANA 20% off</p>
+                                </div>
+                                <i class="fas fa-truck"></i>
                             </div>
                         </article>
-            
-        
-                </main>
-    
+                        <article>
+                            <img src="/images/NewChallengerall_over_print_hoodieFRONT_180x.png" alt="">
+                            <div class="caja-detalle">
+                                <div class="precio-descuento">
+                                    <p class="precio">$230</p>
+                                    <p class="descuento">SUDADERA NEW CHALLENGER 20% off </p>
+                                </div>
+                                <i class="fas fa-truck"></i>
+                            </div>
+                        </article>
+                    </section>
+            </main>
                 <!--FIN DEL MAIN-->
                 <%- include('./partials/footer')%>
-
+        
     </body>
 </html>

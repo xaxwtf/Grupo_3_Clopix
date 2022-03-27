@@ -7,6 +7,7 @@
     </head>
     <body>
         <%- include('../partials/header')%>
+        <div class="wrapper">
             <div class="title">
                 MI PERFIL 
             </div> 
@@ -24,17 +25,17 @@
             <label for="">Mail: <%= usuario.email %> </label>
             <label for="">Celular: 054 11-<%= usuario.phone %>  </label>
             <br>
-        <form  action="/User/<%= usuario.username %>/editPerfil?_method=put" method="post">
-            <label for="">Anterior Contraseña: </label>
-            <input type="password" name="prevPassword" >
+            <form  action="/User/<%= usuario.username %>/editPerfil?_method=put" method="post">
+                <label for="">Anterior Contraseña: </label>
+                <input type="password" name="prevPassword" >
 
-            <label for="">nueva contraseña:</label>
-            <input type="password" name="newpassword"> 
-            <label for="">confirmar contraseña:</label>
-            <input type="password" name="newpasswordConfirm"> 
-            <button type="submit">Cambiar Contraseña</button>
-        </form>
-
+                <label for="">nueva contraseña:</label>
+                <input type="password" name="newpassword"> 
+                <label for="">confirmar contraseña:</label>
+                <input type="password" name="newpasswordConfirm"> 
+                <button type="submit">Cambiar Contraseña</button>
+            </form>
+        </div>
         <%- include('../partials/footer')%>    
     </body>
 

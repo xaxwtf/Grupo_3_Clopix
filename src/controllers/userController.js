@@ -2,6 +2,7 @@ const bycript=require('bcryptjs');
 const db=require('../../database/models');
 const { validationResult } = require('express-validator');
 const fs=require('fs');
+const { log, Console } = require('console');
 const user={
     login:(req, res)=>{
         res.render('Users/login');
@@ -9,16 +10,9 @@ const user={
     registro:(req, res)=>{
         res.render('Users/register');
     },
-    edit:(req,res)=>{
-        /*lo que va a hacer*/
-        db.Usuarios.findOne({
-            where: { 
-                
-            }
-            })
-    
-    },
+
     crear:(req,res)=>{
+
         const errors = validationResult(req);
         let passEncrip=bycript.hashSync(req.body.pasword,3);
         let image="imagendeperfil.png";
@@ -52,8 +46,19 @@ const user={
                 todoOk=false;
             }
         });
-        if(req.body.file){
+        if(req.body.file && (path.extname(req.file.originalname)==".png" || path.extname(req.file.originalname)==".gif" || path.extname(req.file.originalname)==".jpeg" )){
            image= req.file.filename;
+        }
+        else
+        {
+            if(req.session.productoActual!="defecto.png"){
+                try {
+                    fs.unlinkSync(__dirname+"/../../public/images/avatar/"+req.file.filename);
+                    console.log('File removed');
+                } catch(err) {
+                    console.error('Something wrong happened removing the file', err);
+                  }
+            }
         }
         if (todoOk) {
             let nuevo={
@@ -80,10 +85,15 @@ const user={
         }
             
         
-        res.redirect("Users/register");
+        res.redirect("User/register");
         
     },
     logear:(req,res)=>{
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            console.log("HAY ERRORES AL LOGEAR!!!!");
+            return res.render('Users/login',{errors: errors.mapped(),old:req.body});
+        }
         db.Usuarios.findOne({
             where:{
                 username:req.body.user
@@ -91,7 +101,7 @@ const user={
             include:[{association:"Roles"}]
         }).then(resultado=>{
 
-            if(resultado.Roles.name_rol=='admin' && req.body.user==resultado.username && bycript.compareSync(req.body.password,resultado.password) ){
+            if(resultado!= undefined && resultado.Roles.name_rol=='admin' && req.body.user==resultado.username && bycript.compareSync(req.body.pasword,resultado.password) ){
                 console.log("soy admin!!!!!!!!!!!!!!!!!!!!!!!!!");
                 admin={ 
                     user:req.body.user,
@@ -101,7 +111,7 @@ const user={
                 req.session.userLogged=admin;
                 return res.redirect("/admin/menu");
             }
-            else if(resultado.Roles.name_rol == 'client' && req.body.user == resultado.username && bycript.compareSync(req.body.password,resultado.password)){
+            else if(resultado!=undefined &&resultado.Roles.name_rol == 'client' && req.body.user == resultado.username && bycript.compareSync(req.body.pasword,resultado.password)){
                 console.log("soy CLIENT!!!!!!!!!!!!!!!!!!!!!!!!!");
                 req.session.userLogged={ 
                     user:resultado.username,
@@ -112,13 +122,10 @@ const user={
             }
             else{
                 console.log("No entra a ningun iff");
-                 res.redirect("/user/login");
-            }
-        });
-        
-       
-        
-        
+                 res.render('Users/login',{ notExist:true})
+
+            }                                   
+        }) 
     }, 
     perfil:(req,res) => {
         db.Usuarios.findOne({where:{username:req.session.userLogged.user }}).then(resultado=>{

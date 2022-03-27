@@ -10,12 +10,13 @@
             </div>
             
 
-            <form action="/User/Alta" method="post" enctype="multipart/form-data" class="form">
+            <form name="registerForm" id="registerForm" action="/User/Alta" method="post" enctype="multipart/form-data" class="form">
               <div class="inputfield">
                 <label>Nombre completo</label>
                 <input type="text" class="input" name="nombreCompleto" required>
+                <p id="errName" class="error">  </p>
                 <% if(locals && locals.errors && locals.errors.nombreCompleto){ %>
-                  <p><%= errors.nombreCompleto.msg %> </p>
+                  <p class="error"><%= errors.nombreCompleto.msg %> </p>
                 <% } %>
               </div>
                
@@ -24,72 +25,70 @@
                 <label>E-mail</label>
                 <input type="text" class="input" name= "mail" required>
               </div>
+              <p id="errMail" class="error"></p>
               <% if(locals && locals.errors && locals.errors.mail){  %>
-                <p><%= errors.mail.msg %> </p>
+                <p class="error"><%= errors.mail.msg %> </p>
                 <% } %>   
               <div class="inputfield">
                 <label>Celular</label>
                 <input type="number" class="input" name="celular" required >
               </div>
               <% if(locals && locals.errors && locals.errors.celular){  %>
-                <p><%= errors.celular.msg %> </p>
+                <p class="error"><%= errors.celular.msg %> </p>
                 <% } %> 
-         <!--Datos de ingreso-->      
+                  <!--Datos de ingreso-->      
               <div class="inputfield">
                 <label>Nombre de usuario</label>
                 <input type="text" class="input" name="user" required>
               </div>
               <% if(locals && locals.errors && locals.errors.user){  %>
-                <p><%= errors.user.msg %> </p>
+                <p class="error"><%= errors.user.msg %> </p>
                 <% } %>   
               <div class="inputfield">
                 <label>Contraseña</label>
                 <input type="password" class="input" name="pasword" required>
+                <p id="errPassword" class="error"></p>
+               
               </div> 
               <% if(locals && locals.errors && locals.errors.pasword){  %>
-                <p><%= errors.pasword.msg %> </p>
+                <p class="error"><%= errors.pasword.msg %> </p>
+                <% } %> 
+              
+              <% if(locals && locals.errors && locals.errors.pasword){  %>
+                <p class="error"><%= errors.pasword.msg %> </p>
                 <% } %>  
               <div class="inputfield">
                   <label>Confirmar contraseña</label>
                   <input type="password" class="input" name="passwordConfirm" required>
                   <br> 
                   <% if(locals && locals.errors && locals.errors.passwordConfirm){  %>
-                    <p><%= errors.passwordConfirm.msg %> </p>
+                    <p class="error"><%= errors.passwordConfirm.msg %> </p>
                     <% } %>  
               </div> 
 
-            <!--imagen de perfil-->
+              <!--imagen de perfil-->
 
-            <input type="file" class="image-profile" name="avatar">            
+              <input type="file" class="image-profile" name="avatar" accept=" .jpg, .jpeg, .png, .gif">          
 
-            <!--terms-->
+              <!--terms-->
 
-              <div class="inputfield terms" >
-                  <label class="check">
-                    <input type="checkbox" name="terminosyCondiciones" required>
-                    <span class="checkmark"></span>
-                  </label>
-                  <p>Acepto términos y condiciones</p>
-               </div>
-              
-              <div class="inputfield">
-                
-                <button type="submit"> Crear Cuenta </button>
-                
+              <div class="termsAndConditions" >
+                  <input type="checkbox" name="terminosyCondiciones" required>
+                  <h1>Acepto términos y condiciones</h1>
               </div>
+        
+              <button type="submit"> Crear Cuenta </button>
               
-            <!--class container-signin-->
+              
+                <!--class container-signin-->
           
-            <div class="container-signin">
-              <p>¿Ya tienes una cuenta?<a href="#">Iniciar sesión</a>.</p>
-            </div>
-
-
-              
-          </form>
+              <div class="container-signin">
+                <p>¿Ya tienes una cuenta?<a href="#">Iniciar sesión</a>.</p>
+              </div>      
+            </form>
         </div>	
         <%- include('../partials/footer')%>
-
-    </body>
+        <script src="/scripts/register.js"> </script>    <!--tuve que agregar el script en el register.ejs por un error en login.ejs-->
+      </body>
 </html>
   

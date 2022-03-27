@@ -9,10 +9,10 @@ img{
 /*header*/
 header{
     background-color: white;
-}
-header img{
+    font-size: 90%;
     width: 100%;
 }
+
 header nav ul li a{
     width: 15%;
     color: #99DDCC;
@@ -23,6 +23,7 @@ header nav ul li{
     display: flex;
     width: 25%;
     align-content: center;
+    font-size: 75%;
     justify-content:space-between;
 }
 header nav ul{
@@ -31,12 +32,12 @@ header nav ul{
     flex-wrap: wrap;/*esto hace el salto de linea*/
 }
 /*correccion del header, copie lo de rocio y quite el codigo que no hace nada*/
-nav ul li {
+header nav ul li {
     flex-grow: 1;
     flex-wrap: wrap;
     box-sizing: border-box;
 }
-nav a {
+header nav a {
     text-decoration: none;
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -46,102 +47,70 @@ nav a {
     border-top: 5px solid #00324b;
     flex-wrap: wrap;
     position: relative;
+    color: #99DDCC;
+    box-shadow: black;
 }
-
 
 /*header*/
+
+form p.error{
+  color: red;
+  font-size: 75%;
+}
+
+/*carrito Compras*/
 body#bodyCarritoCompras{
-    width: 100%;
     background-image: url("https://cutewallpaper.org/21/vaporwave-pixel-art-wallpaper/19-Pixel-Art-Wallpapers-that-Will-Make-Your-Desktop-Retro.png"); 
-    padding: 40px;
-    margin: auto;
+    margin: 20px;
     color: white;
-}
-/*ajustes del carrito*/
-#bodyCarritoCompras table{
-    width: 100%;
-}
-#bodyCarritoCompras tr{
-    width: 100%;
-    text-align: center;
-}
-#bodyCarritoCompras thead{
-    height: 4vh;
-    font-size: medium;
-    font-family: cursive;
-}
-#bodyCarritoCompras tbody{
-    height: 50vh;
-}
-#bodyCarritoCompras tbody.resultados{
-    height: 5vh;
-}
-
-#bodyCarritoCompras tr td.dproducto{
     
-    height: auto;
-    background-color: #99DDCC;
-    justify-content: center;
-    align-items: center;
-    width: 22%;
-    color: black;
 }
-#bodyCarritoCompras tr td.producto img{
-    justify-content: center;
-    align-items: center;
+body#bodyCarritoCompras div.main{
+  width: 100%;
+  text-align: center;
+  min-height: 60vh;
 }
-#bodyCarritoCompras td.imagenProducto{
-    width: 40%;
+body#bodyCarritoCompras table{
+  width: 100%;
 }
-
-#bodyCarritoCompras button{
-
-    background-color: #99DDCC;
-    width: 100%;
-    color: #FF5DA2;
-    /*border: solid #FF5DA2 5px;*/
-    justify-content: space-around;
+body#bodyCarritoCompras table th{
+  text-align: center;
 }
-#bodyCarritoCompras td button{
-    width: 40%;
+body#bodyCarritoCompras table tr.producto{
+  border: 1px solid white;
+  background-color: #3ccabe;
+  margin: 5%;
 }
-#bodyCarritoCompras td.NoProducto{
-    border: none;
-    color: white;
-}
-#bodyCarritoCompras td.NoProducto button{
-    width: 100%;
-    height: 10vw;
-    background:none;
-    border: none;
-    font-size: 50px
-}
-#bodyCarritoCompras td.dproducto label{
-    font-size: 25px;
-}
-#bodyCarritoCompras tr td{
-    border: 1px solid white;
+body#bodyCarritoCompras table tr td.detalle{
+  display: flex;
+  flex-direction: column;
 }
 
-#bodyCarritoCompras tr.resultados td{
-    border: none;
+body#bodyCarritoCompras table tr td.detalle img{
+  display: none;
 }
-#bodyCarritoCompras tr.resultados td.resultados{
-    border: 1px solid white;
-    background-color: #FF5DA2;
+body#bodyCarritoCompras table tr td.detalle p{
+  margin: auto;
 }
-#bodyCarritoCompras .special{
-    display: flex;
-    margin: auto;
-    justify-content: center;
-    flex-direction: row;
-    height: 4vh;
+body#bodyCarritoCompras table tr td.unidades button{
+  border: none;
 }
-#bodyCarritoCompras td.imagenProducto img{
-    width: 100%;
+
+body#bodyCarritoCompras table tr td.eliminar button{
+  border: none;
+  background: none;
+  font-size: 125%;
+}
+body#bodyCarritoCompras div.main section.special{
+  width: 100%;
+}
+body#bodyCarritoCompras div.main section.special button{
+  width: 45%;
 }
 
 /*fin stylos carrito*/
+
+
 /*estilos unproducto*/
 #bodyUnProducto article section {
     display: flex;
@@ -156,9 +125,7 @@ body#bodyCarritoCompras{
     font-weight: 500;
     text-shadow: 1px 1px 6px #fff;
     padding: 10px;
-    
-    
-    
+    color: white;
 }
 body#bodyUnProducto{
     width: 100%;
@@ -244,361 +211,200 @@ font-size: 14px;
 /*estilos catalogo*/
 body#bodyCatalogo{
     width: 100%;
+    height: 100%;
     background-image: url("https://cutewallpaper.org/21/vaporwave-pixel-art-wallpaper/19-Pixel-Art-Wallpapers-that-Will-Make-Your-Desktop-Retro.png"); 
-    padding: 40px;
+    padding: 2vw;
     margin: auto;
 }
-#bodyCatalogo section article{
+
+body#bodyCatalogo section article{
     display: flex;
-    width: 45%;
-    flex-direction: column;
-    height: auto;
-    margin: 2%;
-    
+    flex-direction:column;
+    height: 55vh;
+    margin: auto;
+    margin-bottom: 5%;
+    margin-top: 2%;
+    width: 80%;
+}
+body#bodyCatalogo section.Productos{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0px;
+  font-size: 225%;
 }
 
-#bodyCatalogo section.imagenProducto{
-    height: 600px;
-
-}
-#bodyCatalogo section.datos{
-    background-color: #99DDCC;
-    
-}
-#bodyCatalogo section.datos label.Nombre{
-    font-size: 30px;
-    color: black;
-}
-#bodyCatalogo section.datos label.Precio{
-    font-size: 20px;
-    color: black;
-}
-#bodyCatalogo section article section{/*apartado Img y Descripcion*/
-    display: flex;
-    flex-direction: column;
+#bodyCatalogo section article a{
+    height: 85%;
     width: 100%;
-    border: 1px solid #99DDCC;
-    align-content: center;
-    justify-content: center;
-    text-align: center;
+    border: 2px solid #99DDCC;
 }
 
-#bodyCatalogo section.Productos{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+#bodyCatalogo section article a img{
+  width: 100%;
+  height: 100%;
 }
+#bodyCatalogo section article section.datos{/* Descripcion*/
+  width: 100%;
+  height: 25%;
+  text-align: center;
+  background-color: #99DDCC;
+  border: 5px solid white;
+}
+
+
 /*fin estilos catalogo*/
 /*Home*/
-body#bodyHome{
-    width: 100%;
-    background: rgb(241,104,193);
-    background: linear-gradient(207deg, rgba(241,104,193,1) 0%, rgba(189,94,213,1) 62%);
+  body#bodyHome header{
+    margin: 2%;
+    width: 95%;
   }
-/*CSS del slider*/
+  body#bodyHome{
+      width: 100%;
+      background: linear-gradient(207deg, rgba(241,104,193,1) 0%, rgba(189,94,213,1) 62%);
+      padding: 2%;
+  }
+  /*CSS del slider*/
+  #bodyHome section.slider ul {
+    display: flex;
+    width: 300%;
+    animation: cambio 12s infinite alternate;
+  }
+  
+  #bodyHome section.slider ul li {
+    list-style: none;
+    width: 100%;
+    margin: 1%;
+  }
 
-#bodyHome ul, li {
-    padding: 0;
-    margin: 0;
-    list-style: none inside;
-  }
-  
-  #bodyHome ul.slider {
-    position:relative; /*Necesitamos que el ul sea relativo*/
-  }
-  #bodyHome ul.slider li {
-    opacity: 0; /*Ocultamos todos los <li>*/
-    transition: opacity .5s;
-    position: absolute; /*Posicionamos en absoluto los <li>*/
-    left: 0px;
-    top: 0px;
-    margin:50px;
-    padding:50px;
-    border:2px solid red;
-    background:#fff;
-  }
-  #bodyHome ul.slider li:first-child {
-    opacity: 1; /*Mostramos el primer <li>*/
-  }
-  #bodyHome ul.slider li:target {
-    opacity: 1; /*Mostramos el <li> al que apunta el enlace*/
-  }
-  #bodyHome nav .slide-num{
-    position:relative;
-    margin-top:35%;
-    
-  }
-  
-  
-  
-  
-  #bodyHome ul.slider {
-    padding: 30px;
-  }
-  
-  #bodyHome ul.slider li {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background-color: rgb(0, 0, 0);
-    opacity: 0; 
-    transition: opacity .5s;
-    text-align: center;
-  }
-  
-  
-  /*aca se modifican los botones de diapositiva*/
-  #bodyHome nav .menu{ 
-    width: 100%;
-    position: absolute;
-    top: auto;
-    right: 0;
-    bottom: 1px;
-    left: 0;
-    background: #f1f2f3;
-    /**/
-  }
-  
-  #bodyHome nav ul {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  
-  #bodyHome nav ul li {
-    display: flex;
-    flex-grow: 1;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-  }
-  
-  #bodyHome nav a{
-    font-size: calc( 1.2rem + 1vw );
-    text-decoration: none;
-    font-weight: bold;
-    color: #00324b;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.8;
-    flex-grow: 1;
-    text-align: center;
-    border-top: 5px solid #00324b;
-    border-right: 1px solid #00324b;
-    flex-wrap: wrap;
-    position: relative;
-  }
-  
-  #bodyHome nav li:last-child a {
-    border-right: 0;
-  }
-  
-  #bodyHome nav a:hover {
-    background-color: #3ccabe;
-    color: #fff;
-    border-top-color: #65bce8;
-  }
-  
-  #bodyHome nav a:active {
-    border-top-color: rgb(106, 219, 195);
-    background: rgb(187, 22, 146);
-    color: #23d6be;
-  }
-  
-  
-  /*fin CSS del slider*/
-  
-  /*MAIN*/
-  
-  
   #bodyHome main{
     margin: auto;
-    width: 90%;
-    
-  }
-  #bodyHome main article{
-    margin: auto;
-    margin-top:15px;
     width: 100%;
-    
+    text-align: center;
   }
-  #bodyHome main article img{
+
+  #bodyHome main section.slider {
     width: 100%;
+    overflow: hidden;
   }
-  
+  #bodyHome main section.Ofertas{
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     text-align: center;
+     width: 100%;
+  }
+
   #bodyHome .caja-detalle{
+    display: flex;
+
     border: 3px white solid;
-    padding: 15px;
-    background: rgb(241,104,193);
+    margin: auto;
+    text-align: center;
     background: linear-gradient(207deg, rgba(241,104,193,1) 0%, rgba(242,223,231,1) 1%); 
     Font-family: Garamond;
-    
-    
-    
   }
-  #bodyHome main section article .caja-detalle{
-    position: relative;
+  #bodyHome .caja-detalle div{
+    width: 90%;
   }
-  #bodyHome .caja-detalle i{
-    display: block;
-    font-size: 16px;
-    padding: 5px;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #39b54a;
-    color: #39b54a;
-    background-color: #FFF;
-    border-radius: 50%;
-    position: absolute;
-    right: 20px;
-    top: -15px;
-    transition: all 0.3s;
-   
   
+  #bodyHome .caja-detalle i{
+    font-size: 16px;
+    background:none;
+    border: none;
+    transition: all 0.3s;
+    position: relative;
+    bottom: -10px;
   }
   
   #bodyHome .caja-detalle i:hover{
     transform: rotate(-90deg)
   }
-  
-  #bodyHome main section article h3{
-    text-align: left;
+  #bodyHome main section.Ofertas img{
+    width: 100%;
+    height: 100%;
   }
-  
-  #bodyHome main section article{
-  
-     width: 43%;
+  #bodyHome main section.Ofertas article{
+    width: 90%;
+    margin: auto;
+    margin-bottom: 5%;
   }
-  
-  #bodyHome .caja-detalle p {
-    color: black;
-  }
+
 /*fin del home*/
-/*estilos login*/
+
+
+/*ESTILOS LOGIN*/
+
 body#bodyLogin{
     background-image: url("https://cdn.shopify.com/s/files/1/1110/3486/files/a2495535377_10.jpg?11163386226905960286");
-    background-size: cover;
-    padding: 0 10px;
-  }
-  
-  
-  
-  #bodyLogin .wrapper{
-    max-width: 500px;
+    background-size: cover;   
+    padding: 2%;
     width: 100%;
-    background: #fff;
-    margin: 20px auto;
-    box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
-    padding: 30px;
-    margin-top: 20%;
   }
   
-  #bodyLogin .wrapper .title{
+  #bodyLogin .wrapper{        /*fondo del formualrio*/
+    
+      width: 100%;
+      height: 55%;   
+      margin: auto;
+      padding: 30px;
+      margin-top: 10%;
+      margin-bottom: 10%; 
+      align-items: center;
+
+  }
+
+  #bodyLogin .wrapper form{    /*titulo usuario*/
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 25px;
+    color: red;
+    font-size: medium;
+    text-align: center;
+    max-width: 400px;
+    height: 250px;
+    margin: auto;
+  }
+  #bodyLogin .wrapper input{
+    border: none;
+    font-size: 100%;
+    margin: auto;
+    height: 15%;
+
+  }
+ 
+  #bodyLogin .wrapper form .title{          /*titulo inicio de sesión*/
     font-size: 24px;
     font-weight: 700;
-    margin-bottom: 25px;
+    margin:auto;
     color: plum;
     text-transform: uppercase;
     text-align: center;
-  }
   
-  #bodyLogin .wrapper .form{
+    height: 25%;
+  }
+  #bodyLogin .wrapper form button{
     width: 100%;
+    background-color: #23d6be;
+    color: white;
+    border: none;
+    height: 25%;
   }
-  
-  #bodyLogin .wrapper .form .inputfield{
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
+  #bodyLogin .wrapper form input{
+      text-align: center;
   }
-  
-    
-  #bodyLogin .wrapper .form .inputfield label{
-       width: 200px;
-       color: #757575;
-       margin-right: 10px;
-      font-size: 14px;
-    }
-    #bodyLogin .wrapper .form .inputfield .input,
-    #bodyLogin .wrapper .form .inputfield .textarea{
-    width: 100%;
-    outline: none;
-    border: 1px solid #d5dbd9;
-    font-size: 15px;
-    padding: 8px 10px;
-    border-radius: 3px;
-    transition: all 0.3s ease;
-  }
-  
-  #bodyLogin .wrapper .form .inputfield .btn{
-      width: 100%;
-       padding: 8px 10px;
-      font-size: 15px; 
-      border: 0px;
-      background:  plum;
-      color: #fff;
-      cursor: pointer;
-      border-radius: 3px;
-      outline: none;
-    }
-    
-    #bodyLogin  .wrapper .form .inputfield .btn:hover{
-      background: black;
-    }
-/*fin estilos login*/
-/*register*/
+/*FIN ESTILOS LOGIN*/
+
+
+/*REGISTER*/
 body#bodyRegister{
   width: 100%;
   background-image: url("https://cdn.shopify.com/s/files/1/1171/8456/files/71530421_729406894232388_5302369846022799223_n_1024x1024.jpg?v=1636497317");
   background-size: cover;
-  
+  padding: 5%;
 }
-#bodyRegister nav .menu{ 
-  width: 100%;
-  position: absolute;
-  top: auto;
-  right: 0;
-  bottom: 1px;
-  left: 0;
-  background: #f1f2f3;
-  /**/
-}
-
-#bodyRegister nav ul {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-#bodyRegister nav ul li {
-  display: flex;
-  flex-grow: 1;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-}
-
-#bodyRegister nav a{
-  font-size: calc( 1.2rem + 1vw );
-  text-decoration: none;
-  font-weight: bold;
-  color: #00324b;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.8;
-  flex-grow: 1;
-  text-align: center;
-  border-top: 5px solid #00324b;
-  border-right: 1px solid #00324b;
-  flex-wrap: wrap;
-  position: relative;
-}
-
-#bodyRegister nav li:last-child a {
-  border-right: 0;
-}
-
-
-
-
 
 /*FORMULARIO*/
 
@@ -623,23 +429,24 @@ body#bodyRegister{
 
 #bodyRegister  .wrapper .form{
   width: 100%;
+  color: black;
 }
 
-#bodyRegister .wrapper .form .inputfield{
+#bodyRegister .wrapper .form .inputfield{        
   margin-bottom: 15px;
-  display: flex;
   align-items: center;
 }
 
+
+
 #bodyRegister .wrapper .form .inputfield label{
    width: 200px;
-   color: #757575;
    margin-right: 10px;
-  font-size: 14px;
+   font-size: 14px;
 }
 
-#bodyRegister .wrapper .form .inputfield .input,
-#bodyRegister .wrapper .form .inputfield .textarea{
+#bodyRegister .wrapper .form .inputfield .input
+{
   width: 100%;
   outline: none;
   border: 1px solid #d5dbd9;
@@ -647,28 +454,6 @@ body#bodyRegister{
   padding: 8px 10px;
   border-radius: 3px;
   transition: all 0.3s ease;
-}
-
-#bodyRegister .wrapper .form .inputfield .textarea{
-  width: 100%;
-  height: 125px;
-  resize: none;
-}
-
-#bodyRegister .wrapper .form .inputfield .custom_select{
-  position: relative;
-  width: 100%;
-  height: 37px;
-}
-
-#bodyRegister .wrapper .form .inputfield .custom_select:before{
-  content: "";
-  position: absolute;
-  top: 12px;
-  right: 10px;
-  border: 8px solid;
-  border-color: #d5dbd9 transparent transparent transparent;
-  pointer-events: none;
 }
 
 #bodyRegister .wrapper .form .inputfield .custom_select select{
@@ -685,55 +470,18 @@ body#bodyRegister{
   border-radius: 3px;
 }
 
+#bodyRegister .wrapper .form h1{
+  font-size: 14px;
+  color: gray;
+  display:flex;
+  justify-content: space-around;
+}
+/*termino el modifico del estilo de validaciones en register*/
 
-#bodyRegister .wrapper .form .inputfield .input:focus,
-#bodyRegister .wrapper .form .inputfield .textarea:focus,
-#bodyRegister .wrapper .form .inputfield .custom_select select:focus{
-  border: 1px solid plum;
-}
-
-#bodyRegister .wrapper .form .inputfield p{
-   font-size: 14px;
-   color: #757575;
-}
-#bodyRegister .wrapper .form .inputfield .check{
-  width: 15px;
-  height: 15px;
-  position: relative;
-  display: block;
-  cursor: pointer;
-}
-#bodyRegister .wrapper .form .inputfield .check input[type="checkbox"]{
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-}
-#bodyRegister .wrapper .form .inputfield .check .checkmark{
-  width: 15px;
-  height: 15px;
-  border: 1px solid plum;
-  display: block;
-  position: relative;
-}
-#bodyRegister .wrapper .form .inputfield .check .checkmark:before{
-  content: "";
-  position: absolute;
-  top: 1px;
-  left: 2px;
-  width: 5px;
-  height: 2px;
-  border: 2px solid;
-  border-color: transparent transparent #fff #fff;
-  transform: rotate(-45deg);
-  display: none;
-}
-#bodyRegister .wrapper .form .inputfield .check input[type="checkbox"]:checked ~ .checkmark{
-  background:plum;
-}
-
-#bodyRegister .wrapper .form .inputfield .check input[type="checkbox"]:checked ~ .checkmark:before{
-  display: block;
+#bodyRegister form div.termsAndConditions{
+  display: flex;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 #bodyRegister button{
@@ -749,7 +497,7 @@ body#bodyRegister{
 }
 
 #bodyRegister .wrapper .form .inputfield .btn:hover{
-  background: black;
+  background: #99DDCC;
 }
 
 #bodyRegister .wrapper .form .inputfield:last-child{
@@ -761,50 +509,55 @@ body#bodyRegister{
 }
 /*fin register*/
 
+
+
 /*alta Producto*/
 #AltaProducto form{
   display: flex;
-  background: rgb(255,221,236);
   background: radial-gradient(circle, rgba(255,221,236,1) 0%, rgba(143,34,149,1) 100%);
   border: 1px solid white;
   flex-direction: column;
   align-items: center;
   justify-items: center;
-  margin: 0px;
+  width: 100%;
+  margin: auto;
   padding: 5px;
-  font-size:x-large;
-  
+  font-size:100%;
+  margin-top: 5%;
  
 }
 
-#AltaProducto {
+
+body#AltaProducto {
   
   width: 100%;
-  height: 100vh;
-  justify-items: center;
-  align-content: flex-end;
-  margin: 20px;
   padding: 10px;
   color: white;
   text-shadow: #555 2px 2px 3px;
-  background: rgb(255,221,236);
   background: radial-gradient(circle, rgba(255,221,236,1) 0%, rgba(143,34,149,1) 100%);
 }
-
-#AltaProducto input {
-  color: black;
-  
+body#AltaProducto form section.inputImage{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin-top: 5%;
+}
+body#AltaProducto form input{
+  margin: 2%;
 }
 
 #AltaProducto input.imagenProducto{
   color: white;
   background-color: lightblue;
-  margin-top:20px;
+  margin-top:5px;
 	border:1px solid transparent;
   padding: 5px;
-  font-size: 16px;
-
+  width: 80%;
+  content: "Subir img Producto";
 }
+
 #AltaProducto button{
   color: white;
   background-color: lightblue;
@@ -824,43 +577,42 @@ body#bodyRegister{
   padding: 5px;
   font-size: 16px;
 }
-#AltaProducto option{
-  color: black;
-  
+body#AltaProducto main.main{
+  width: 100%;
+  height: 60vh;
+  text-align: center;
 }
+
 /*fin alta Producto*/
 
 /*footer*/
-section.infoContacto{
-    align-items: flex-end;
+footer {
+  display:  flex;
+  flex-direction: column;
+  margin: auto;
+  border: 1px solid white;
+  color: white;
+  width: 80%;
+  height: 10%;
+  font-size: 100%;
+  text-align: center;
+  margin-bottom: 5%;
 }
-img.redesSociales{
-    align-items: flex-end;
-}
-.etiquetasPie{
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-items: center;
-}
+
 footer a img{
     width: 8%;
 }
 footer a{
-    color: white;
+  color: white;
 }
-footer { 
-    /*height: 10vh;*/
-    /*bottom: 40px;*/
-    height: auto;
-    margin-top:35px;
-    margin-bottom: 0px;
-    border: 1px solid white;
-    align-content: center;
-    justify-content: center;
-    align-items: flex-end;
-    color: white;
+footer section ul li {
+  display: flex;
+  justify-content: center; 
 }
+
+
+
+
 /*footer*/
 
 /*ERROR 404*/
@@ -873,11 +625,10 @@ footer {
 
 .error{
 text-align: center;
-font-size: 26px;
+
 }
 .not-found{
 text-align: center;
-font-size: 16px;
 }
 
 /*ERROR 404*/
@@ -887,7 +638,9 @@ body#MenuAdmin{
   background-color: #FF5DA2;
 }
 body#MenuAdmin div{
+  margin-top: 5%;
   height: 59vh;
+  font-size: 150%;
 }
 body#MenuAdmin div ul{
   width: 100%;
@@ -898,30 +651,84 @@ body#MenuAdmin div ul{
 body#MenuAdmin div ul li{
   display: flex;
   width: 100%;
+  margin-bottom: 5%;
   justify-content: center;
 }
-@media (min-width:1280px){
 
-}
-@media (max-width:1279px){
 
-}
-@media (max-width:768px){
-    
 
-}
-
-@media (max-width:480px){
-  #bodyRegister .wrapper .form .inputfield{
-    flex-direction: column;
-    align-items: flex-start;
+@media (min-width: 768px) and (max-width: 1279px ) {
+  header{
+    font-size: 225%;
   }
-  #bodyRegister .wrapper .form .inputfield label{
-    margin-bottom: 5px;
+  body#bodyCatalogo section.Productos{
+    margin-top: 5%;
+    width: 100%;
+    text-align: center;
+    font-size: 125%;
   }
-  #bodyRegister .wrapper .form .inputfield.terms{
-    flex-direction: row;
+  body#bodyCatalogo section article{
+    width: 44%;
+    margin: 3%;
+  }
+ 
+  body#bodyCarritoCompras{
+    justify-content: center;
+  }
+
+  body#bodyCarritoCompras table#ListaCompras{
+    width: 60%;
+  }
+  #bodyLogin .wrapper form{
+    width: 60%;
+  }
+  #AltaProducto form{
+    width: 60%;
+  }
+  body#bodyCarritoCompras div.main section.special button{
+    font-size: 125%;
+  }
+  #bodyHome main section.Ofertas article{
+    width: 45%;
   }
 
 }
+@media (min-width: 1280px){
+  header{
+    font-size: 225%;
+  }
+  body#bodyCatalogo section.Productos{
+    font-size: 100%;
+  }
+  body#bodyCatalogo section article{
+    width: 23%;
+    height: 48vh;
+    margin: 1%;
+    margin-bottom: 5%;
+  }
+
+  footer{
+    width: 40%;
+    font-size: 100%;
+  }
+  #bodyLogin .wrapper form{
+    width: 40%;
+  }
+  #AltaProducto form{
+    width: 40%;
+  }
+  body#bodyCarritoCompras div.main section.special button{
+    font-size: 125%;
+  }
+  #bodyHome main section.Ofertas article{
+    width: 22%;
+  }
+}
+@keyframes cambio {
+  0%{margin-left: 0%;}
+  50%{margin-left: -100%;} 
+  100%{margin-left: -200%;}  
+}
+
+
 

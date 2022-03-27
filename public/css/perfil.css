@@ -73,17 +73,7 @@ nav ul li {
     flex-grow: 1;
     flex-wrap: wrap;
 }
-nav a {
-    text-decoration: none;
-    font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.8;
-    flex-grow: 1;
-    text-align: center;
-    border-top: 5px solid #00324b;
-    flex-wrap: wrap;
-    position: relative;
-}
+
 
 /*empieza el formulario de perfil*/
 

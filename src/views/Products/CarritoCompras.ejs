@@ -2,70 +2,45 @@
 <html>
     <%- include('../partials/head')  %> 
     <body id="bodyCarritoCompras">
-         <%- include('../partials/header')%>
-        <table id="ListaCompras">
-            <thead>
+        <%- include('../partials/header')%>
+        <div class="main">
+
+            <h2>Lista Compras</h2>
+
+            <table class="ListaCompras">    
+                <% for(let i=0;i<DetalleCompra.length;i++){ %>
+                    <tr class="producto">
+                        <td class="detalle">
+                            <img src="/images/product/<%= DetalleCompra[i].image_product %>" alt="imagen Producto">
+                            <p> <%= DetalleCompra[i].nameProduct %> </p>
+                        </td>
+                        <td class="precio">
+                            <p> $<%= DetalleCompra[i].priceUnit %>  </p>
+                        </td>
+                        <td class="unidades">
+                            <button type="button"> <i class="fas fa-plus"></i> </button>
+                            <p> <%= DetalleCompra[i].stock %>  </p>
+                            <button type="button"> <i class="fas fa-minus"></i> </button>
+                        </td>
+                        <td class="eliminar">
+                            <button type="button"> <i class="far fa-trash-alt"></i> </button>
+                        </td>
+                    </tr> 
+                <% } %>
                 <tr>
-                    <th id="Producto">Producto</th>
-                    <th id="PrecioUnitario">Precio Unitario</th>
-                    <th id="Cantidad">Cantidad</th>
-                    <th id="PrecioTotal">Precio Total</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <!--prodcutos del carrito-->
-
-                <% for(let i=0;i<DetalleCompra.length;i++){ %> 
-               
-                    <tr >
-                        <td class="imagenProducto">
-                             <img src= "/images/product/<%= DetalleCompra[i].image_product %>"  alt="Imagen de Producto"  > 
-                        </td>
-                        <td class="dproducto"> 
-                            <label> <%= DetalleCompra[i].priceUnit %> </label>
-                        </td>
-        
-                        <td class="dproducto">
-                            <button type="button"> <i class="fas fa-arrow-up"> </i> </button>
-                            <label for=""> <%= DetalleCompra[i].stock %> </label>
-                            <button type="button"> <i class="fas fa-arrow-down"></i> </button>
-                        </td>
-        
-                        <td class="dproducto"> 
-                            <label><%= (DetalleCompra[i].priceUnit* DetalleCompra[i].stock) %> $</label>
-                        </td>
-        
-                        <td class="NoProducto">
-                            <form method="post" action= "/Producto/Carrito/<%= DetalleCompra[i].id %>/eliminar?_method=delete" > 
-
-                                <button type="submit"> <i class="far fa-trash-alt"></i> </button> 
-                            </form>
-                        </td>
-                    </tr>
-               
-                <% } %> 
-                <!-- fin del carrito-->
-            </tbody>
-            <tbody class="resultados">
-                <tr class="resultados">
-                    <td class="NoProducto"></td>
-                    <td class="NoProducto"></td>
-                    <td class="resultados">
-                        <label >Total Neto: </label>
+                    <td>
+                        <H2>Total</H2>
                     </td>
-                    <td class="resultados"> 
-                        <label > valor </label>
+                    <td>
+                        xxxxxx
                     </td>
-                    <td class="NoProducto"></td>
                 </tr>
-            </tbody>
-        </table>
-        <section class="special"> 
-            <button submit >Realizar Pedido</button>
-            <br>
-            <button onclick="location.href='/producto'" > Seguir Comprando  </button> <!--es un boton para redireccionar, para ello usa la etiqueta location y usa su propiedad href asignandole a esta la ruta-->
-        </section>
+            </table>
+            <section class="special">
+                <button submit >Realizar Pedido</button>
+                <button onclick="location.href='/producto'" > Seguir Comprando  </button> <!--es un boton para redireccionar, para ello usa la etiqueta location y usa su propiedad href asignandole a esta la ruta-->
+            </section>
+        </div>
         <%- include('../partials/footer')%>
     </body>
 </html>
