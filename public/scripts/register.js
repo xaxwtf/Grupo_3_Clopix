@@ -26,20 +26,29 @@ registerForm.addEventListener('submit', function(event){
     } 
 });
 
+
+
+//CORRIGIENDO, CAMBIO KEYDOWN POR BLUR
  
 //valido los input 
 //validate name
-registerForm.nombreCompleto.addEventListener('keydown', nameValidate);
 
+registerForm.nombreCompleto.addEventListener('blur', nameValidate);
 function nameValidate(){
     if(registerForm.nombreCompleto.value < 2 ){
         registerForm.nombreCompleto.style.borderColor= 'red';
     }else {
         registerForm.nombreCompleto.style.borderColor= 'inherit';
     }
+      //blur
+    
+      if(registerForm.nombreCompleto.value == 0) {
+        document.querySelector('p#errName').innerHTML= 'El campo es obligatorio';
+        
+    }
 } 
 //validate email
-registerForm.mail.addEventListener('keydown', mailValidate);
+registerForm.mail.addEventListener('blur', mailValidate);
 
 function mailValidate(){
     if(!ValidateEmail(registerForm.mail.value)){
@@ -47,10 +56,17 @@ function mailValidate(){
     }else {
         registerForm.mail.style.borderColor= 'inherit';
     }
+     //blur
+    
+     if(registerForm.mail.value == 0) {
+        document.querySelector('p#errMail').innerHTML= 'El campo es obligatorio';
+        
+    }
 } 
 
-//validate password (hay que corregit pero no es tan necesario)
-registerForm.pasword.addEventListener('keydown', passwordValidate);
+//validate password 
+
+registerForm.pasword.addEventListener('blur', passwordValidate);
 
 function passwordValidate(){
     if(registerForm.pasword.value < 8 ){
@@ -58,7 +74,57 @@ function passwordValidate(){
     }else {
         registerForm.pasword.style.borderColor= 'inherit';
     }
+    //blur
+    
+    if(registerForm.pasword.value == 0) {
+        document.querySelector('p#errPassword').innerHTML= 'El campo es obligatorio';
+        
+    }
+
 } 
+
+
+//Blur Confirm password
+registerForm.passwordConfirm.addEventListener('blur', passwordConfirmValidate);
+
+function passwordConfirmValidate(){
+
+    if(registerForm.passwordConfirm.value == 0 ){
+        
+        registerForm.passwordConfirm.style.borderColor= 'red';
+    }else {
+        registerForm.passwordConfirm.style.borderColor= 'inherit';
+    }
+    //blur
+    
+    if(registerForm.passwordConfirm.value == 0) {
+        document.querySelector('p#errConfirmPassword').innerHTML= 'El campo es obligatorio';
+    }
+        
+    }
+
+    //Blur celular
+    registerForm.celular.addEventListener('blur', celularValidate);
+    function celularValidate() {
+        if(registerForm.celular.value == 0) {
+            document.querySelector('p#errCelular').innerHTML= 'El campo es obligatorio';
+            registerForm.celular.style.borderColor= 'red';
+    }else {
+        registerForm.celular.style.borderColor= 'inherit';
+    }
+    }
+
+    //blur nombre de usuario
+    registerForm.user.addEventListener('blur', userValidate);
+    function userValidate() {
+        if(registerForm.user.value == 0) {
+            document.querySelector('p#errUser').innerHTML= 'El campo es obligatorio';
+            registerForm.user.style.borderColor= 'red';
+    }else {
+        registerForm.user.style.borderColor= 'inherit';
+    }
+    }
+
 
 //validacion de caracteres del email
 function ValidateEmail(mail) 

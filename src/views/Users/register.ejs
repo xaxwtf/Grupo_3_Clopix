@@ -32,6 +32,7 @@
               <div class="inputfield">
                 <label>Celular</label>
                 <input type="number" class="input" name="celular" required >
+                <p id="errCelular" class="error"></p>
               </div>
               <% if(locals && locals.errors && locals.errors.celular){  %>
                 <p class="error"><%= errors.celular.msg %> </p>
@@ -40,6 +41,7 @@
               <div class="inputfield">
                 <label>Nombre de usuario</label>
                 <input type="text" class="input" name="user" required>
+                <p id="errUser" class="error"></p>
               </div>
               <% if(locals && locals.errors && locals.errors.user){  %>
                 <p class="error"><%= errors.user.msg %> </p>
@@ -60,6 +62,7 @@
               <div class="inputfield">
                   <label>Confirmar contraseña</label>
                   <input type="password" class="input" name="passwordConfirm" required>
+                  <p id="errConfirmPassword" class="error"></p>
                   <br> 
                   <% if(locals && locals.errors && locals.errors.passwordConfirm){  %>
                     <p class="error"><%= errors.passwordConfirm.msg %> </p>

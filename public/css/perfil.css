@@ -50,9 +50,9 @@ form{
 }
 
 #footer { 
-    position:relative;
+ /* position:relative;*/
     height: 10vh;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
     width: 100px;
     height: auto;
 }
@@ -61,7 +61,7 @@ footer a img{
 }
 
 img.redesSociales{
-    align-items: flex-end;
+   align-items: flex-end;
 }
 
 nav ul {
@@ -134,12 +134,12 @@ input {
     transition: all 0.3s ease;
 }
 
-/*section {
-    display: block;
+section {
+    display: flex;
 }
 section.infoContacto {
     align-items: flex-end;
-}*/
+}
 
 .imagen-perfil {
         border: 5px solid;

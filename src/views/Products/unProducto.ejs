@@ -6,10 +6,10 @@
     
     <article>
         <form action="/Producto/<%= unP.id %>/agregarCarrito" method="post">
-            <section>
+            <section class="img">
                 <img src ="/images/product/<%= unP.image_product %>"  alt="imagen Ejemplo"> 
             </section>
-            <section>
+            <section class="info">
                 <label for="Nombre"><%= unP.nameProduct %> </label>
                 <br>
                 <label for="Precio">Precio:<%= unP.priceUnit %> </label>
