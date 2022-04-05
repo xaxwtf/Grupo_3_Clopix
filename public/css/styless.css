@@ -761,7 +761,8 @@ body#MenuAdmin div ul li{
     margin: auto;
   }
   #bodyHome main section.Ofertas {
-    flex-direction: row;        
+    flex-direction: row;
+    justify-content: space-around;         
  }
   
 }
