@@ -8,7 +8,7 @@ const rutaUser=require('./src/routes/user');
 const isLogged=require('./src/myMiddlewares/connexionOk');
 const isAdmin=require("./src/myMiddlewares/isAdmin");
 const session=require('express-session')
-const apiRouters=require("./src/routes/apis/apiProducto");
+const apiRouters=require("./src/routes/apis/apisRouter");
 
 
 app.set('view engine','ejs'); /** establezco que voy a usar ejs */
@@ -30,7 +30,7 @@ app.use(express.json());
 app.use('/',rutaPrincipal);
 app.use('/Producto',rutaP);
 app.use('/User',rutaUser);
-app.use("/api",apiRouters);
+app.use('/Api',apiRouters);
 
 
 app.use(function(req, res, next) {

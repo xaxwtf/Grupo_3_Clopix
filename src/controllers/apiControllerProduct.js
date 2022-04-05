@@ -32,15 +32,16 @@ const api={
         db.Talles.findAll({include:[{association:"Talle"}]}).then(resultado => { 
             for(let i=0;i<resultado.length;i++){
 
-                Object.defineProperty(countByCategory, resultado[i].name_size,{
+                Object.defineProperty(objetoliteral.countByCategory, resultado[i].name_size,{
                     value: resultado[i].Talle.length,
                     writable: true,
                     enumerable: true,
                     configurable: true
                 });
             }
+            return res.json(objetoliteral);
         });
-        return res.json.status(200)(objetoliteral);
+        
     },
     get:(req, res)=>{
         db.Productos.findByPk(req.params.id,{include:[{association:"talles"}]}).then(resultado=>{
@@ -53,8 +54,9 @@ const api={
                 image_product:"https://grupo3cloplixv2.herokuapp.com/images/product/"+resultado.image_product,
                 stock:resultado.stock,
             }
-        })
-        return res.json.status(200)(aux);
+            return res.json(aux);
+        });
+        
     }
 }
 

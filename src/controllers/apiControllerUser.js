@@ -8,7 +8,6 @@ const api={
             countByCategory:{}, 
             products:[]
         }
-
         db.Usuarios.findAll().then(resultado => { 
             objetoliteral.count=resultado.length; ///total de usuarios
             arrayDeUsuarios=Array();
@@ -23,13 +22,13 @@ const api={
                     avatar_image:"https://grupo3cloplixv2.herokuapp.com/images/avatar/"+resultado[i].avatar_image,
 
                  }
-                 arrayDeProductos.push(aux);
+                 arrayDeUsuarios.push(aux);
             }
             objetoliteral.products=arrayDeUsuarios;
-
+            return res.json(objetoliteral);
         });
 
-        return res.json.status(200)(objetoliteral);
+        
     },
     get:(req, res)=>{
         db.Usuarios.findByPk(req.params.id).then(resultado=>{
@@ -41,8 +40,9 @@ const api={
                 full_name:resultado.full_name,
                 avatar_image:"https://grupo3cloplixv2.herokuapp.com/images/avatar/"+resultado.avatar_image,
              }
+             return res.json(aux);
         });
-        return res.json.status(200)(aux);
+        
     }
 }
 
