@@ -5,8 +5,7 @@ const api={
     listar:(req,res) => { 
         let objetoliteral = { 
             count:1,
-            countByCategory:{}, 
-            products:[]
+            users:[]
         }
         db.Usuarios.findAll().then(resultado => { 
             objetoliteral.count=resultado.length; ///total de usuarios
@@ -19,12 +18,12 @@ const api={
                     
                     phone:resultado[i].phone,
                     full_name:resultado[i].full_name,
-                    avatar_image:"https://grupo3cloplixv2.herokuapp.com/images/avatar/"+resultado[i].avatar_image,
+                    avatar_image:"https://grupo3cloplixv2.herokuapp.com/images/avatar/"+resultado[i].avatar_image,///"https://grupo3cloplixv2.herokuapp.com/images/avatar/"
 
                  }
                  arrayDeUsuarios.push(aux);
             }
-            objetoliteral.products=arrayDeUsuarios;
+            objetoliteral.users=arrayDeUsuarios;
             return res.json(objetoliteral);
         });
 

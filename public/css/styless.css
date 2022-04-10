@@ -269,6 +269,7 @@ body#bodyCatalogo section.Productos{
   text-align: center;
   background-color: #99DDCC;
   border: 5px solid white;
+  line-height: 40px;
 }
 
 
@@ -316,15 +317,18 @@ body#bodyCatalogo section.Productos{
      flex-direction: column;
      flex-wrap: wrap;
      width: 90%;
-     margin: auto;           
+     margin: auto;    
+         
   }
   #bodyHome main section.Ofertas article{
     height: 45vh;
     text-align: center;
     border: 1px solid #99DDCC;
+    margin:0 55px;
+   
   }
   #bodyHome main section.Ofertas article div.imagenProducto{
-    height:85%;
+    height: 85%;
     margin: auto;
   }
   #bodyHome main section.Ofertas article div.imagenProducto img{
@@ -656,24 +660,30 @@ text-align: center;
 
 /*MENU ADMIN*/
 body#MenuAdmin{
-  background-color: #FF5DA2;
+  background-color: #C3F293 ;
 }
 body#MenuAdmin div{
   margin-top: 5%;
   height: 59vh;
   font-size: 150%;
 }
+
 body#MenuAdmin div ul{
   width: 100%;
   justify-content: center;
   align-content: center;
 }
 
+
 body#MenuAdmin div ul li{
   display: flex;
-  width: 100%;
-  margin-bottom: 5%;
+  width: 25%;
   justify-content: center;
+  border-style:inset;
+
+  margin-left: 37%;
+  margin-top: 15%;
+ 
 }
 
 
@@ -724,7 +734,8 @@ body#MenuAdmin div ul li{
   }
   
   #bodyHome main section.Ofertas {
-    flex-direction: row;        
+    flex-direction: row;    
+    justify-content: space-evenly;   
  }
 
 }
@@ -734,6 +745,9 @@ body#MenuAdmin div ul li{
   }
   body#bodyCatalogo section.Productos{
     font-size: 100%;
+  }
+  body#bodyCatalogo label.for.precio{ 
+    color:red;
   }
   body#bodyCatalogo section article{
     width: 23%;
@@ -759,10 +773,11 @@ body#MenuAdmin div ul li{
   #bodyUnProducto article{
     width: 40%;
     margin: auto;
+    
   }
   #bodyHome main section.Ofertas {
-    flex-direction: row;
-    justify-content: space-around;         
+    flex-direction: row;    
+    justify-content: space-around;  
  }
   
 }
