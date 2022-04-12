@@ -170,6 +170,12 @@ body#bodyModificarProducto{
     background-size: cover;
 
 }
+body#bodyModificarProducto div.imagen{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 25vw;
+}
 #bodyModificarProducto form{
     display: flex;
     flex-direction: column;
@@ -195,14 +201,13 @@ body#bodyModificarProducto{
 color: #757575;
 font-size: 14px;
 }
-
+#bodyModificarProducto  .form .inputfield{
+  margin-top: 3%;
+  margin-bottom: 2%;
+}
 #bodyModificarProducto  .form .inputfield .input { 
     width: 100%;
     border: 1px solid #d5d5d5;
-    font-size: 15px;
-    padding: 8px 10px;
-    border-radius: 3px;
-    margin-top: 20px;
 }
 #bodyModificarProducto form{
     width: 100%;
@@ -220,7 +225,6 @@ font-size: 14px;
     border: none;
     background-color: #99DDCC;
     color: white;
-    margin-top: 2%;
 }
 
 /*fin de estilos modificar producto*/
@@ -685,7 +689,13 @@ body#MenuAdmin div ul li{
   margin-top: 15%;
  
 }
-
+/*ok*/
+body#bodyOk{
+  width: 100%;
+}
+body#bodyOk main{
+  text-align: center;
+}
 
 
 @media (min-width: 768px) and (max-width: 1279px ) {

@@ -49,16 +49,13 @@
               <div class="inputfield">
                 <label>Contraseña</label>
                 <input type="password" class="input" name="pasword" required>
-                <p id="errPassword" class="error"></p>
-               
+                <p id="errorPasword" class="error" ></p>
               </div> 
               <% if(locals && locals.errors && locals.errors.pasword){  %>
                 <p class="error"><%= errors.pasword.msg %> </p>
                 <% } %> 
               
-              <% if(locals && locals.errors && locals.errors.pasword){  %>
-                <p class="error"><%= errors.pasword.msg %> </p>
-                <% } %>  
+              
               <div class="inputfield">
                   <label>Confirmar contraseña</label>
                   <input type="password" class="input" name="passwordConfirm" required>
@@ -70,9 +67,10 @@
               </div> 
 
               <!--imagen de perfil-->
-
-              <input type="file" class="image-profile" name="avatar" accept=" .jpg, .jpeg, .png, .gif">          
-
+              <div class="avatar-input">
+              <input id="imageEp" type="file" class="image-profile" name="avatar" >  
+              <p class="error"></p>
+              </div>        
               <!--terms-->
 
               <div class="termsAndConditions" >
@@ -80,7 +78,7 @@
                   <h1>Acepto términos y condiciones</h1>
               </div>
         
-              <button type="submit"> Crear Cuenta </button>
+              <button type="submit" id="crearUsuario"> Crear Cuenta </button>
               
               
                 <!--class container-signin-->

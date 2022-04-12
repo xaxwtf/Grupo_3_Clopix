@@ -1,36 +1,30 @@
 const registerForm = document.forms['registerForm'];
 
-registerForm.addEventListener('submit', function(event){
-    event.preventDefault();
-    let errors= false;
 
-    //validacion de nombreCompleto
-    if (this.nombreCompleto.value.length < 2){
-
-        errors= true;
-        document.getElementById('errName').innerHTML='El nombre tiene que tener más de 2 caracteres';
-    } 
-
-    /*validacion de mail*/ 
-    if(!ValidateEmail(this.mail.value)){
-        errors = true;
-        document.getElementById('errMail').innerHTML='Debe ser un E-mail válido';
-    }
-    //verifica si existen errores, si no los hay envia el form
-    if(errors== false){
-        registerForm.submit();
-    }
-     //validacion de contraseña
-    if (this.pasword.value.length < 8){
-        document.getElementById('errPassword').innerHTML='La contraseña debe tener al menos 8 caracteres';
-    } 
-});
-
-
-
+let error=false;
 //CORRIGIENDO, CAMBIO KEYDOWN POR BLUR
- 
+let enviar=document.querySelector("#crearUsuario"); 
+enviar.disabled=true;
 //valido los input 
+
+//validacion de imagenes de perfil
+
+registerForm.avatar.addEventListener("blur", imageValidator);
+
+function imageValidator() {
+    let imageValue = registerForm.avatar.value;
+    let extensionesAceptadas = /(.jpg|.jpeg|.png|.gif)$/i;
+
+    if(imageValue != ""){ 
+        if (!extensionesAceptadas.exec(imageValue)) {
+            document.querySelector('div.avatar-input p.error').innerHTML= 'Formato incorrecto'
+            error= true;
+           }
+
+    }
+
+}
+
 //validate name
 
 registerForm.nombreCompleto.addEventListener('blur', nameValidate);
@@ -43,6 +37,7 @@ function nameValidate(){
       //blur
     
       if(registerForm.nombreCompleto.value == 0) {
+          error=true
         document.querySelector('p#errName').innerHTML= 'El campo es obligatorio';
         
     }
@@ -53,6 +48,7 @@ registerForm.mail.addEventListener('blur', mailValidate);
 function mailValidate(){
     if(!ValidateEmail(registerForm.mail.value)){
         registerForm.mail.style.borderColor= 'red';
+        error=false;
     }else {
         registerForm.mail.style.borderColor= 'inherit';
     }
@@ -60,7 +56,7 @@ function mailValidate(){
     
      if(registerForm.mail.value == 0) {
         document.querySelector('p#errMail').innerHTML= 'El campo es obligatorio';
-        
+        error=false;
     }
 } 
 
@@ -69,18 +65,20 @@ function mailValidate(){
 registerForm.pasword.addEventListener('blur', passwordValidate);
 
 function passwordValidate(){
-    if(registerForm.pasword.value < 8 ){
-        registerForm.pasword.style.borderColor= 'red';
-    }else {
-        registerForm.pasword.style.borderColor= 'inherit';
-    }
-    //blur
-    
-    if(registerForm.pasword.value == 0) {
-        document.querySelector('p#errPassword').innerHTML= 'El campo es obligatorio';
+    console.log("ESTE ES EL VALOD DE INPUT PASSWORD");
+    console.log(registerForm.pasword.value);
+
+    if(registerForm.pasword.value.length < 8 ){
         
+
+        registerForm.pasword.style.borderColor= 'red';
+        document.querySelector('p#errorPasword').innerHTML= 'la contraseña debe tener al menos 8 caracteres';
+        error=true;
     }
 
+    else {
+        registerForm.pasword.style.borderColor= 'inherit';
+    }
 } 
 
 
@@ -89,16 +87,13 @@ registerForm.passwordConfirm.addEventListener('blur', passwordConfirmValidate);
 
 function passwordConfirmValidate(){
 
-    if(registerForm.passwordConfirm.value == 0 ){
-        
+    if(registerForm.passwordConfirm.value != registerForm.pasword.value) {
+        error=true;
         registerForm.passwordConfirm.style.borderColor= 'red';
-    }else {
-        registerForm.passwordConfirm.style.borderColor= 'inherit';
+        document.querySelector('p#errConfirmPassword').innerHTML= 'Las contraseñas no coinciden';
     }
-    //blur
-    
-    if(registerForm.passwordConfirm.value == 0) {
-        document.querySelector('p#errConfirmPassword').innerHTML= 'El campo es obligatorio';
+    else {
+        registerForm.passwordConfirm.style.borderColor= 'green';
     }
         
     }
@@ -107,6 +102,7 @@ function passwordConfirmValidate(){
     registerForm.celular.addEventListener('blur', celularValidate);
     function celularValidate() {
         if(registerForm.celular.value == 0) {
+            error=true;
             document.querySelector('p#errCelular').innerHTML= 'El campo es obligatorio';
             registerForm.celular.style.borderColor= 'red';
     }else {
@@ -118,12 +114,19 @@ function passwordConfirmValidate(){
     registerForm.user.addEventListener('blur', userValidate);
     function userValidate() {
         if(registerForm.user.value == 0) {
+            error=true;
             document.querySelector('p#errUser').innerHTML= 'El campo es obligatorio';
             registerForm.user.style.borderColor= 'red';
     }else {
         registerForm.user.style.borderColor= 'inherit';
     }
-    }
+}
+//validando las validaciones!!!
+if(!error){
+    enviar.disabled=false;
+}
+
+
 
 
 //validacion de caracteres del email

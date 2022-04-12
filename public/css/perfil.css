@@ -38,16 +38,14 @@ header nav ul{
     flex-wrap: wrap;
 }
 
-form{
+section.infoUser{
     display: flex;
-    border: 1px solid white;
     flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    margin: 0px;
-    padding: 5px;
-    font-size:x-large
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
+
 
 #footer { 
  /* position:relative;*/
@@ -89,12 +87,10 @@ nav ul li {
 
 label { 
     color: #757575;
-    margin-right: 10px;
-    margin-bottom: 15px;
     font-size: 14px;
-    width: 200px;
-    display: flex;
-    
+}
+form.swapPass{
+    text-align: center;
 }
 
 .wrapper { 
@@ -132,11 +128,10 @@ input {
     padding: 8px 10px;
     border-radius: 3px;
     transition: all 0.3s ease;
+    margin-bottom: 2%;
 }
 
-section {
-    display: flex;
-}
+
 section.infoContacto {
     align-items: flex-end;
 }

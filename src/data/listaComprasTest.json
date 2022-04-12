@@ -1,14 +1,5 @@
 [
  {
-  "id": 6,
-  "nameProduct": "bcaselli6",
-  "image_product": "p7.png",
-  "description": " ",
-  "talle_id": "M",
-  "priceUnit": 890,
-  "stock": 1
- },
- {
   "id": 7,
   "nameProduct": "fspencelayh4",
   "image_product": "p5.png",
@@ -16,5 +7,23 @@
   "talle_id": "XXXL",
   "priceUnit": 610,
   "stock": 1
+ },
+ {
+  "id": 12,
+  "nameProduct": "Remera Galaxy ",
+  "description": "Remera rosa con estampado ",
+  "priceUnit": 5000,
+  "talle_id": 1,
+  "image_product": "p6.png",
+  "stock": 2
+ },
+ {
+  "id": 4,
+  "nameProduct": "Gorro Winter 2022",
+  "description": "Gorro clásico tejido con borde plegable ",
+  "priceUnit": 2000,
+  "talle_id": 5,
+  "image_product": "p1.png",
+  "stock": 100
  }
 ]

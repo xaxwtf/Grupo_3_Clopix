@@ -15,28 +15,36 @@
             <div class ="imagen-avatar-perfil"> 
             <img src="/images/avatar/<%= usuario.avatar_image %>"  alt="imagendeperfil" class="imagen-perfil" style="width: 100%;">
             </div>
-            <form action="/User/<%= usuario.username %>/editImage?_method=put" method="post" enctype="multipart/form-data">
+            <form name="swapImage" action="/User/<%= usuario.username %>/editImage?_method=put" method="post" enctype="multipart/form-data">
                 <input type="file" name="newAvatar">
-                <button type="submit">Cambiar Imagen</button>
+                <p class="error" id="newAvatar"></p>
+                <button type="submit" id="cambiarImagen">Cambiar Imagen</button>
             </form>
 
-            <label for="">Nombre Completo: <%= usuario.full_name %> </label>
-            
-            <label for="">Mail: <%= usuario.email %> </label>
-            <label for="">Celular: 054 11-<%= usuario.phone %>  </label>
-            <br>
-            <form  action="/User/<%= usuario.username %>/editPerfil?_method=put" method="post">
+            <section class="infoUser">
+                <label for="">Nombre Completo: <%= usuario.full_name %> </label>
+                <label for="">Mail:<%= usuario.email %> </label>
+                <label for="">Celular:054 11-<%= usuario.phone %>  </label>
+            </section>
+
+            <form name="cambiarPass" action="/User/<%= usuario.username %>/editPerfil?_method=put" method="post" class="swapPass">
                 <label for="">Anterior Contraseña: </label>
                 <input type="password" name="prevPassword" >
+                <p class="error" id="prevPassword"></p>
 
-                <label for="">nueva contraseña:</label>
-                <input type="password" name="newpassword"> 
-                <label for="">confirmar contraseña:</label>
+                <label for="">Nueva contraseña:</label>
+                <input type="password" name="newpassword">
+                <p class="error" id="newpassword"></p> 
+
+                <label for="">Confirmar contraseña:</label>
                 <input type="password" name="newpasswordConfirm"> 
+                <p class="error" id="newpasswordConfirm"></p>
+
                 <button type="submit">Cambiar Contraseña</button>
             </form>
         </div>
-        <%- include('../partials/footer')%>    
+        <%- include('../partials/footer')%>
+        <script src="/scripts/perfil.js"> </script>
     </body>
 
 </html>

@@ -2,7 +2,7 @@ const bycript=require('bcryptjs');
 const db=require('../../database/models');
 const { validationResult } = require('express-validator');
 const fs=require('fs');
-const { log, Console } = require('console');
+
 const user={
     login:(req, res)=>{
         res.render('Users/login');
@@ -17,13 +17,12 @@ const user={
         let passEncrip=bycript.hashSync(req.body.pasword,3);
         let image="imagendeperfil.png";
         let todoOk = true;
-        console.log("estos son los errores!!!!!!!!!!!!!!!!!");
-        console.log(errors);
+       
         if (!errors.isEmpty()) {
           return res.render('Users/register',{errors: errors.mapped(),old:req.body});
         }
         if(!bycript.compareSync(req.body.passwordConfirm, passEncrip)){
-            console.log("las contraseñas no coinciden");
+            
             return res.render("Users/register",{ errors: { passwordConfirm: { msg:"error, las contraseñas no coinciden"}}});
         }
        //valido por user unico
@@ -91,7 +90,7 @@ const user={
     logear:(req,res)=>{
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            console.log("HAY ERRORES AL LOGEAR!!!!");
+           
             return res.render('Users/login',{errors: errors.mapped(),old:req.body});
         }
         db.Usuarios.findOne({
@@ -102,7 +101,6 @@ const user={
         }).then(resultado=>{
 
             if(resultado!= undefined && resultado.Roles.name_rol=='admin' && req.body.user==resultado.username && bycript.compareSync(req.body.pasword,resultado.password) ){
-                console.log("soy admin!!!!!!!!!!!!!!!!!!!!!!!!!");
                 admin={ 
                     user:req.body.user,
                     pasword:resultado.password,
@@ -112,16 +110,16 @@ const user={
                 return res.redirect("/admin/menu");
             }
             else if(resultado!=undefined &&resultado.Roles.name_rol == 'client' && req.body.user == resultado.username && bycript.compareSync(req.body.pasword,resultado.password)){
-                console.log("soy CLIENT!!!!!!!!!!!!!!!!!!!!!!!!!");
+                
                 req.session.userLogged={ 
                     user:resultado.username,
                     pasword: resultado.password,
                     tipe:resultado.Roles.name_rol
                 }; 
-                return res.redirect("/user/"+resultado.username+"/profile");
+                return res.redirect("/user/profile");
             }
             else{
-                console.log("No entra a ningun iff");
+               
                  res.render('Users/login',{ notExist:true})
 
             }                                   
@@ -144,8 +142,6 @@ const user={
                 username:req.params.user
             }
         }).then(r=>{
-            console.log("EL VALOR DE REQ.BODY.PREV");
-            console.log(req.body.prevPassword);
             if( bycript.compareSync(req.body.prevPassword,r.password)&& req.body.newpassword==req.body.newpasswordConfirm){
                 db.Usuarios.update({ 
                     password: bycript.hashSync(req.body.newpassword,3)
@@ -154,14 +150,11 @@ const user={
                        username: req.params.user
                    }
                 });
-                console.log("PASSWORD CAMBIADA CORRECTAMENTE")
-                res.redirect("/User/"+req.params.user+"/Profile");
+
+                res.redirect("/User/"+req.params.user+"/Profile/ok");
 
             }
-            else{
-                console.log("EL R TIENE");
-                console.log(r);
-            }
+            
         }).catch(error=>console.log(error));
         
         

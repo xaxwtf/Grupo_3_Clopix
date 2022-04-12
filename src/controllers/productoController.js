@@ -5,7 +5,6 @@ const db=require('../../database/models');
 const { validationResult } = require('express-validator');
 const multer=require('multer');
 const path=require('path');
-const { log, Console } = require('console');
 
 const producto={
     alta:(req, res)=>{
@@ -39,7 +38,7 @@ const producto={
         
         let buffer={};
         let id=req.params.id;
-        console.log("el file contiene:"+req.file);
+
         if(req.body.newDescripcion!=""){
             Object.defineProperty(buffer, "description",{
                 value: req.body.newDescripcion,
@@ -63,7 +62,6 @@ const producto={
                 enumerable: true,
                 configurable: true
               });
-
         }
         
         if(req.file!=undefined && req.file.filename!=undefined){
@@ -97,10 +95,7 @@ const producto={
 
     Catalogo:(req, res)=>{
         db.Productos.findAll({include:[{association:"talles"}]}).then(resultado=>{ 
-            console.log("ESTO ES LO QUE TIENE DE RESULTADO");
-            console.log(resultado);
-            console.log(resultado.length);
-           
+
             res.render('Products/productDetail',{producto:resultado})
         });
         
@@ -117,8 +112,7 @@ const producto={
         res.render('Products/CarritoCompras',{ DetalleCompra: Detalle.readFile()});
     },
     CrearProducto:(req,res)=>{
-        console.log("esto contiene el FILEEEE");
-        console.log(req.file.filename);
+
         let extencion=path.extname(req.file.filename);
         let errors = validationResult(req);
 
@@ -144,8 +138,6 @@ const producto={
         }
 
         let talleD;
-        console.log("EL TALLE ES");
-        console.log(req.body.talle.value);
         switch(req.body.talle){
             case 'S':
                 talleD=1;
@@ -175,8 +167,6 @@ const producto={
             priceUnit: req.body.precio,
             stock:req.body.stock
         }
-        console.log("------------------------------------------------- voy por aca");
-        console.log(nuevo);
     
         db.Productos.create(nuevo)
 

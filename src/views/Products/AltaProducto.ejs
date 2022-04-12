@@ -5,18 +5,21 @@
         <%- include('../partials/header')%>
         <main class="main">
 
-            <form method="post"  action="/producto/Create" enctype="multipart/form-data">
+            <form name="altaP" method="post"  action="/producto/Create" enctype="multipart/form-data">
                 <h2>Alta Producto</h2>
                 <input type="text" name="nombre" placeholder="Nombre del Producto" value="<% if (typeof errors != "undefined") { %><%= old.nombre %><%} %>">
+                    <p class="error" id="nombre"></p>
                     <% if ( typeof errors != "undefined" && errors.nombre != undefined) { %>
                         <p class="error"><%= errors.nombre.msg %></p>
                     <% } %>
 
                 <input type="text" name="descripcion" placeholder="Descripcion" value="<% if (typeof errors !== "undefined") { %><%= old.descripcion %><%} %>">
+                    <p class="error" id="descripcion"></p>
                     <% if (typeof errors != "undefined" && errors.descripcion != undefined) { %>
                         <p class="error"><%= errors.descripcion.msg %></p>
                     <% } %>
                 <input type="text" placeholder="Precio Unitario" name="precio" value="<% if (typeof errors !== "undefined") { %><%= old.precio %><%} %>">
+                    <p class="error" id="precio"></p>    
                     <% if (typeof errors != "undefined" && errors.precio != undefined) { %>
                         <p class="error"><%= errors.precio.msg %></p>
                     <% } %>
@@ -36,18 +39,20 @@
                     <% if (typeof errors != "undefined" && errors.stock != undefined) { %>
                         <p class="error"><%= errors.stock.msg %></p>
                     <% } %>
+                <p class="error" id="stock"></p>
                 <section class="inputImage">
                     <p>Imagen de Producto</p>
-                    <input type="file" name="imgProduct"  >
-                        <% if(locals.imageNovalida){ %> 
-                            <p class="error">archivo no valido!</p>
-                        <% } %> 
+                    <input type="file" name="imgProduct">
+                    <% if(locals.imageNovalida){ %> 
+                         <p class="error">archivo no valido!</p>
+                    <% } %> 
+                    <p class="error" id="errorimgProduct"></p>
                 </section>
     
-                <button type="submit">Agregar Producto</button>
+                <button id="AgregarProducto" type="submit">Agregar Producto</button>
             </form>
-
         </main>
         <%- include('../partials/footer')%>
+        <script src="/scripts/createProducto.js"> </script>
     </body>
 </html>

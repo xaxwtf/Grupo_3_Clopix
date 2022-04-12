@@ -23,7 +23,10 @@
                             <button type="button"> <i class="fas fa-minus"></i> </button>
                         </td>
                         <td class="eliminar">
-                            <button type="button"> <i class="far fa-trash-alt"></i> </button>
+                            <form action="/Producto/Carrito/<%= DetalleCompra[i].id%>/eliminar?_method=delete" method="post">
+                                <button type= "submit"> <i class="far fa-trash-alt"></i> </button>
+                            </form>
+                           
                         </td>
                     </tr> 
                 <% } %>

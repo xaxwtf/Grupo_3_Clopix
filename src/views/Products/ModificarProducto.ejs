@@ -8,49 +8,55 @@
     <body id="bodyModificarProducto">
         <%- include('../partials/header')%>
         <main>
-            <form action="/Producto/<%= producto.id %>/edit?_method=put" method="post" enctype="multipart/form-data">
+            <form name="mproducto" action="/Producto/<%= producto.id %>/edit?_method=put" method="post" enctype="multipart/form-data">
                
                     <div class="title">
                         PRODUCTO PERSONALIZADO
                     </div>
     
                     <div class="form"> 
-
+                        <div class="imagen">
+                            <img src="/images/product/<%= producto.image_product %>"  alt="imagenProducto">
+                            <input type="file" name="newImageProduct">
+                            <p class="error" id="errornewImageProduct"></p>
+                        </div>
                         <div class="inputfield">
     
                             <label> <b> Nombre del producto Actual: </b>   <%= producto.nameProduct %> </label>
                             <input type="text" class="input" name="newNombre">
+                            <p class="error" id="errornewNombre"></p>
                         </div> 
     
                         <div class="inputfield">
                             
                             <label> <b>Descripción Actual:  </b>  <%= producto.description %></label>
-                            
                             <input type="text" class="input" name="newDescripcion">
+                            <p class="error" id="errornewDescripcion"></p>
                         </div> 
     
                         <div class="inputfield"> 
                         
                             <label> <b> Precio Actual: $</b>  <%= producto.priceUnit %> </label>
                             <input type="text" class="input" name="newPrice">
+                            <p class="error" id="errornewPrice"></p>
                         </div>
                         <div class="inputfield">
-                            <img src="/images/product/<%= producto.image_product %>"  alt="imagenProducto" style="width: 100%;">
-                            <input type="file" name="newImageProduct">
-                        </div>
+                            <label> <b>Unidades Actuales:  </b>  <%= producto.stock %></label>
+                            <input type="text" class="input" name="newStock">
+                            <p class="error" id="errornewStock"></p>
+                        </div> 
+                        
                     </div>
                 
                 <!--BOTONES-->
-                <button type="submit"> Guardar Cambios</button>
+                <button type="submit" id="GuardarCambios"> Guardar Cambios</button>
             </form>
             <form action="/Producto/<%= producto.id%>?_method=delete" method="post">
                 <button type="submit"> Eliminar!!!!!</button>
             </form>
 
         </main>
-        
-           
-
     <%- include('../partials/footer')%>
+    <script src="/scripts/editP.js"> </script>
 </body>
 </html> 

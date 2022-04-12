@@ -44,11 +44,12 @@ userRoute.post('/Alta', upload.single('avatar'),validationUser, userController.c
 userRoute.delete('/:id/Baja');
 userRoute.put('/:id/editar');
 userRoute.get('/register',userController.registro);
-userRoute.get('/:user/profile',userTest.isLogged,userController.perfil);
+userRoute.get('/profile',userTest.isLogged,userController.perfil);
 userRoute.get('/unloged',userController.unLoged);
 userRoute.put('/:user/editPerfil',userController.editProfile); 
 userRoute.put('/:user/editImage',upload.single('newAvatar'),userController.editImageProfile);
 
+userRoute.get('/:user/profile/ok',(req,res)=>{ res.render('Users/ok')});
 
 
 
